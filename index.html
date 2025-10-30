@@ -163,45 +163,90 @@
             line-height: 1.6;
         }
 
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 15px;
+        .tech-category {
+            margin-bottom: 25px;
         }
 
-        .tech-tag {
-            background-color: #e7f1ff;
-            color: #0d6efd;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 0.9em;
+        .tech-category h4 {
+            font-size: 1.1em;
+            color: #495057;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .tech-stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 15px;
+        }
+
+        .tech-stack-item {
+            text-align: center;
+            padding: 15px 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+            transition: all 0.2s;
+        }
+
+        .tech-stack-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(13, 110, 253, 0.15);
+            border-color: #0d6efd;
+        }
+
+        .tech-stack-item img {
+            width: 45px;
+            height: 45px;
+            margin-bottom: 8px;
+        }
+
+        .tech-stack-item p {
+            font-size: 0.85em;
+            color: #495057;
             font-weight: 500;
         }
 
-        .project-images {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .project-images img {
-            width: 100%;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
         .architecture-diagram {
-            background-color: #fff;
-            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 25px 0;
+            color: white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .flow-step {
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
             border-radius: 8px;
-            border: 2px solid #e9ecef;
-            margin: 20px 0;
-            font-family: "Courier New", monospace;
-            font-size: 0.9em;
-            line-height: 1.8;
-            overflow-x: auto;
+            margin-bottom: 15px;
+            border-left: 4px solid #fff;
+        }
+
+        .flow-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .flow-step-title {
+            font-weight: 700;
+            font-size: 1.05em;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .flow-step-content {
+            font-size: 0.95em;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        .flow-arrow {
+            text-align: center;
+            font-size: 1.5em;
+            margin: 10px 0;
+            color: #fff;
         }
 
         .education-list, .experience-list {
@@ -235,6 +280,11 @@
             .project-header {
                 flex-direction: column;
                 align-items: flex-start;
+            }
+
+            .tech-stack-grid {
+                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+                gap: 10px;
             }
         }
     </style>
@@ -327,17 +377,52 @@
                 </ul>
 
                 <div class="architecture-diagram">
-[데이터 수집] NAVER News API / YouTube API / ECOS / FRED / yFinance
-    ↓
-[데이터 저장] MongoDB Atlas (chatbot_rag)
-    ↓
-[AI 분석] KoBART Summarizer / Sentiment Analysis / GPT-5 Labeling
-    ↓
-[AI 챗봇] GPT-5 Function Calling + Vector Store (RAG)
-    ↓
-[웹 서비스] Spring Boot (8081) ↔ FastAPI (8002~8009)
-    ↓
-[사용자 UI] 대시보드 / 뉴스 요약 / AI 챗봇 / 감성 시각화
+                    <div class="flow-step">
+                        <div class="flow-step-title">1단계: 데이터 수집</div>
+                        <div class="flow-step-content">
+                            NAVER News API로 경제 뉴스 수집 · YouTube API로 영상 데이터 수집<br>
+                            ECOS API로 한국 경제지표 수집 · FRED API로 미국 경제지표 수집 · yFinance로 실시간 주가/환율 데이터 수집
+                        </div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">
+                        <div class="flow-step-title">2단계: 데이터 저장</div>
+                        <div class="flow-step-content">
+                            MongoDB Atlas (chatbot_rag 데이터베이스)에 수집된 모든 데이터 저장 및 관리
+                        </div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">
+                        <div class="flow-step-title">3단계: AI 분석 처리</div>
+                        <div class="flow-step-content">
+                            KoBART Summarizer로 뉴스 요약 생성 · Sentiment Analysis로 감성 분석 수행<br>
+                            GPT-5 Labeling으로 주요 키워드 및 카테고리 자동 분류
+                        </div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">
+                        <div class="flow-step-title">4단계: AI 챗봇 엔진</div>
+                        <div class="flow-step-content">
+                            GPT-5 Function Calling으로 사용자 질의 분석 및 함수 호출<br>
+                            Vector Store 기반 RAG로 관련 문서 검색 및 컨텍스트 제공
+                        </div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">
+                        <div class="flow-step-title">5단계: 웹 서비스 통합</div>
+                        <div class="flow-step-content">
+                            Spring Boot (8081) ↔ FastAPI (8002~8009) 간 RESTful API 통신<br>
+                            Thymeleaf 템플릿 엔진으로 동적 페이지 렌더링
+                        </div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">
+                        <div class="flow-step-title">6단계: 사용자 인터페이스</div>
+                        <div class="flow-step-content">
+                            실시간 대시보드로 경제 지표 시각화 · 뉴스 요약 자동 제공<br>
+                            AI 챗봇 대화 인터페이스 · Chart.js로 감성 분석 결과 그래프 표시
+                        </div>
+                    </div>
                 </div>
 
                 <p><strong>핵심 기술 구현</strong></p>
@@ -347,19 +432,84 @@
                     <li><strong>API 엔드포인트:</strong> /chat, /tts, /stt, /rag/docs 등 RESTful API 설계</li>
                 </ul>
 
-                <div class="tech-stack">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">FastAPI</span>
-                    <span class="tech-tag">Spring Boot</span>
-                    <span class="tech-tag">MongoDB Atlas</span>
-                    <span class="tech-tag">OpenAI GPT-5</span>
-                    <span class="tech-tag">RAG</span>
-                    <span class="tech-tag">Vector Store</span>
-                    <span class="tech-tag">CLOVA STT</span>
-                    <span class="tech-tag">Google Cloud TTS</span>
-                    <span class="tech-tag">ECOS API</span>
-                    <span class="tech-tag">FRED API</span>
-                    <span class="tech-tag">yFinance</span>
+                <p><strong>사용 기술 스택</strong></p>
+                
+                <div class="tech-category">
+                    <h4>Backend & AI</h4>
+                    <div class="tech-stack-grid">
+                        <div class="tech-stack-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI">
+                            <p>FastAPI</p>
+                        </div>
+                        <div class="tech-stack-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                            <p>Python</p>
+                        </div>
+                        <div class="tech-stack-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="OpenAI">
+                            <p>GPT-5</p>
+                        </div>
+                        <div class="tech-stack-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
+                            <p>Pandas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h4>STT & TTS</h4>
+                    <div class="tech-stack-grid">
+                        <div class="tech-stack-item">
+                            <img src="https://www.ncloud-img.com/logo/2020/naver-logo-green_20191231.png" alt="CLOVA">
+                            <p>CLOVA STT</p>
+                        </div>
+                        <div class="tech-stack-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP TTS">
+                            <p>GCP TTS</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h4>Database</h4>
+                    <div class="tech-stack-grid">
+                        <div class="tech-stack-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                            <p>MongoDB Atlas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h4>Data Source APIs</h4>
+                    <div class="tech-stack-grid">
+                        <div class="tech-stack-item">
+                            <img src="https://www.ncloud-img.com/logo/2020/naver-logo-green_20191231.png" alt="NAVER">
+                            <p>NAVER API</p>
+                        </div>
+                        <div class="tech-stack-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/512px-YouTube_Logo_2017.svg.png" alt="YouTube">
+                            <p>YouTube API</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h4>Frontend Integration</h4>
+                    <div class="tech-stack-grid">
+                        <div class="tech-stack-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">
+                            <p>Spring Boot</p>
+                        </div>
+                        <div class="tech-stack-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="Thymeleaf">
+                            <p>Thymeleaf</p>
+                        </div>
+                        <div class="tech-stack-item">
+                            <img src="https://www.chartjs.org/img/chartjs-logo.svg" alt="Chart.js">
+                            <p>Chart.js</p>
+                        </div>
+                    </div>
                 </div>
 
                 <p style="margin-top: 20px;"><strong>프로젝트 성과</strong></p>
