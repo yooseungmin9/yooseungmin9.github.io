@@ -5,174 +5,392 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>유승민 | 이력서</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f8f9fa;
             color: #333;
         }
+
         .resume {
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 30px;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
             background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
+
         header {
             text-align: center;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+            border-bottom: 3px solid #e9ecef;
+            padding-bottom: 25px;
+            margin-bottom: 40px;
         }
+
         header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            color: #2c3e50;
+            font-size: 2.8em;
+            color: #212529;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
+
         header p {
-            margin: 5px 0 0;
-            color: #555;
-            font-size: 1em;
+            color: #6c757d;
+            font-size: 1.1em;
         }
+
         header a {
-            color: #3498db;
+            color: #0d6efd;
             text-decoration: none;
+            margin: 0 10px;
         }
+
         header a:hover {
             text-decoration: underline;
         }
+
         section {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
+
         h2 {
-            font-size: 1.8em;
-            color: #34495e;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        h3 {
-            font-size: 1.4em;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        .project {
+            font-size: 1.9em;
+            color: #212529;
+            border-bottom: 3px solid #0d6efd;
+            padding-bottom: 12px;
             margin-bottom: 25px;
-            padding-left: 15px;
-            border-left: 3px solid #ecf0f1;
+            font-weight: 600;
         }
-        .project p, .project ul {
-            margin: 5px 0;
+
+        h3 {
+            font-size: 1.5em;
+            color: #495057;
+            margin-bottom: 12px;
+            font-weight: 600;
         }
-        .project ul {
-            padding-left: 20px;
-            list-style-type: disc;
+
+        .profile-text {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #495057;
         }
-        .skills-list li {
-            background-color: #ecf0f1;
-            padding: 8px 12px;
-            border-radius: 4px;
-            display: inline-block;
-            margin-right: 8px;
-            margin-bottom: 8px;
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-item {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-item img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .skill-item p {
+            font-size: 0.95em;
+            color: #495057;
+            font-weight: 500;
+        }
+
+        .project {
+            margin-bottom: 35px;
+            padding: 25px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #0d6efd;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .project-header h3 {
+            margin: 0;
+        }
+
+        .project-date {
+            color: #6c757d;
             font-size: 0.95em;
         }
-        .skills-list strong {
-            color: #2c3e50;
-        }
-        code {
-            background-color: #e8e8e8;
-            padding: 2px 6px;
+
+        .project-role {
+            background-color: #0d6efd;
+            color: white;
+            padding: 4px 12px;
             border-radius: 4px;
-            font-family: "Courier New", Courier, monospace;
             font-size: 0.9em;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .project p {
+            margin: 12px 0;
+            line-height: 1.7;
+        }
+
+        .project ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .project li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tech-tag {
+            background-color: #e7f1ff;
+            color: #0d6efd;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .project-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .project-images img {
+            width: 100%;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .architecture-diagram {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+            margin: 20px 0;
+            font-family: "Courier New", monospace;
+            font-size: 0.9em;
+            line-height: 1.8;
+            overflow-x: auto;
+        }
+
+        .education-list, .experience-list {
+            list-style: none;
+        }
+
+        .education-list li, .experience-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .education-list li:last-child, .experience-list li:last-child {
+            border-bottom: none;
+        }
+
+        @media (max-width: 768px) {
+            .resume {
+                margin: 20px;
+                padding: 25px;
+            }
+
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 12px;
+            }
+
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
 <body>
     <div class="resume">
         <header>
-            <h1>유승민 | Back-end Developer</h1>
+            <h1>유승민</h1>
+            <p style="font-size: 1.3em; color: #495057; margin: 10px 0;">Backend Developer</p>
             <p>
-                <a href="mailto:2win0min@naver.com">2win0min@naver.com</a> | 010-5958-0369
+                <a href="mailto:2win0min@naver.com">2win0min@naver.com</a> | 
+                <a href="tel:010-5958-0369">010-5958-0369</a>
             </p>
         </header>
 
         <section id="profile">
-            <h2>소개 (Profile)</h2>
-            <p>
-                문제를 논리적으로 분석하고 창의적인 해결책을 제시하는 신입 개발자입니다. 팀원들과의 협업을 중요하게 생각하며, FastAPI, Spring Boot 등 새로운 백엔드 기술을 배우고 프로젝트에 적용하는 것을 즐깁니다. 데이터 처리 및 분석, AI 모델 연동을 통해 가치 있는 서비스를 만드는 데 관심이 많습니다.
+            <h2>소개</h2>
+            <p class="profile-text">
+                문제를 논리적으로 분석하고 창의적인 해결책을 제시하는 백엔드 개발자입니다. 
+                FastAPI와 Spring Boot를 활용한 백엔드 아키텍처 설계 경험이 있으며, 
+                AI 기술과 데이터 분석을 결합하여 실질적인 가치를 제공하는 서비스 개발에 열정을 가지고 있습니다. 
+                팀 협업과 새로운 기술 학습을 즐기며, 지속적인 성장을 추구합니다.
             </p>
         </section>
 
         <section id="skills">
-            <h2>보유 기술 (Skills)</h2>
-            <ul>
-                <li><strong>Programming Language:</strong> Python</li>
-                <li><strong>Backend Framework:</strong> FastAPI, Spring Boot</li>
-                <li><strong>Database:</strong> Oracle, MongoDB</li>
-                <li><strong>DevOps:</strong> Docker</li>
-                <li><strong>Version Control:</strong> Git, GitHub</li>
-                <li><strong>Development Tools:</strong> PyCharm, IntelliJ IDEA, VS Code, Jupyter Notebook</li>
-            </ul>
+            <h2>보유 기술</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                    <p>Python</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI">
+                    <p>FastAPI</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">
+                    <p>Spring Boot</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                    <p>MongoDB</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle">
+                    <p>Oracle DB</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                    <p>Docker</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                    <p>Git</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP">
+                    <p>Google Cloud</p>
+                </div>
+            </div>
         </section>
 
         <section id="projects">
-            <h2>프로젝트 경험 (Projects)</h2>
+            <h2>프로젝트 경험</h2>
+            
             <div class="project">
-                <h3>AI 기반 경제 뉴스 분석 및 챗봇 시스템 (2025)</h3>
-                <p><strong>설명:</strong> 실시간으로 경제 뉴스를 수집하고, RAG(Retrieval-Augmented Generation) 기술을 적용하여 사용자 질문에 답변하는 AI 챗봇 및 데이터 분석 백엔드 시스템을 개발했습니다.</p>
-                <p><strong>주요 역할:</strong></p>
+                <div class="project-header">
+                    <h3>SUMMARIX - AI 기반 경제 뉴스 분석 웹서비스</h3>
+                    <span class="project-date">2025.09 - 2025.10</span>
+                </div>
+                
+                <span class="project-role">기획 총괄 · AI 챗봇 개발</span>
+                
+                <p><strong>프로젝트 개요</strong></p>
+                <p>
+                    경제 뉴스를 효율적으로 분석하고 핵심 이슈와 감성 흐름을 한눈에 파악할 수 있는 AI 기반 플랫폼입니다. 
+                    GPT-5와 RAG 기술을 결합하여 실시간 경제 질의응답이 가능한 챗봇을 구현했습니다.
+                </p>
+
+                <p><strong>주요 담당 업무</strong></p>
                 <ul>
-                    <li>FastAPI를 사용하여 뉴스 데이터 수집 및 정보 제공을 위한 API 엔드포인트 개발</li>
-                    <li>MongoDB Atlas를 활용하여 수집된 뉴스 데이터 및 분석 결과를 효율적으로 저장 및 관리</li>
-                    <li>GPT와 같은 LLM을 연동하고, Streaming API를 구현하여 실시간 답변 생성 기능 개발</li>
+                    <li>전체 시스템 아키텍처 설계 및 FastAPI 기반 백엔드 서버 구축</li>
+                    <li>GPT-5 Function Calling을 활용한 AI 챗봇 개발 (실시간 경제지표 조회, RAG 기반 문서 검색)</li>
+                    <li>MongoDB Atlas 연동으로 최신 뉴스 데이터 실시간 수집 및 관리</li>
+                    <li>ECOS(한국은행), FRED(미국 연준), yFinance API 통합하여 경제지표 자동 조회 시스템 구현</li>
+                    <li>CLOVA STT와 Google Cloud TTS 연동으로 음성 대화 기능 구현</li>
+                    <li>Vector Store 기반 RAG 시스템 구축 및 자동 문서 갱신 파이프라인 개발</li>
+                    <li>팀 협업 관리 및 일정 조율, 최종 발표 준비</li>
                 </ul>
-                <p><strong>사용한 기술:</strong> <code>Python</code>, <code>FastAPI</code>, <code>MongoDB</code>, <code>GCP</code>, <code>RAG</code>, <code>LLM</code></p>
-            </div>
-            <div class="project">
-                <h3>의료 영상(CT) 분석 및 종양 분류 모델 개발 (2025)</h3>
-                <p><strong>설명:</strong> 2D 폐 CT 이미지 슬라이스를 전처리하고, 딥러닝 모델을 활용하여 종양을 분류하는 프로젝트를 진행했습니다. 제한된 리소스 환경을 고려하여 모델 경량화(Pruning, Quantization)를 실험했습니다.</p>
-                <p><strong>주요 역할:</strong></p>
+
+                <div class="architecture-diagram">
+[데이터 수집] NAVER News API / YouTube API / ECOS / FRED / yFinance
+    ↓
+[데이터 저장] MongoDB Atlas (chatbot_rag)
+    ↓
+[AI 분석] KoBART Summarizer / Sentiment Analysis / GPT-5 Labeling
+    ↓
+[AI 챗봇] GPT-5 Function Calling + Vector Store (RAG)
+    ↓
+[웹 서비스] Spring Boot (8081) ↔ FastAPI (8002~8009)
+    ↓
+[사용자 UI] 대시보드 / 뉴스 요약 / AI 챗봇 / 감성 시각화
+                </div>
+
+                <p><strong>핵심 기술 구현</strong></p>
                 <ul>
-                    <li>PyTorch를 사용하여 CT 이미지 분류 모델 설계 및 학습 파이프라인 구축</li>
-                    <li>데이터 불균형 문제를 해결하기 위한 데이터 전처리 및 증강 기법 적용</li>
+                    <li><strong>Function Calling 구조:</strong> get_latest_news(), get_indicator(), get_market(), search_docs() 함수를 통해 실시간 데이터 조회</li>
+                    <li><strong>RAG 시스템:</strong> watcher.py를 통한 문서 자동 감시 및 Vector Store 실시간 갱신</li>
+                    <li><strong>API 엔드포인트:</strong> /chat, /tts, /stt, /rag/docs 등 RESTful API 설계</li>
                 </ul>
-                <p><strong>사용한 기술:</strong> <code>Python</code>, <code>PyTorch</code>, <code>Pandas</code>, <code>Google Colab</code></p>
-            </div>
-            <div class="project">
-                <h3>인구 밀집도 및 위험 예측 모델 개발 (2025)</h3>
-                <p><strong>설명:</strong> 특정 장소와 날짜의 24시간 인구 밀집도와 관련 위험도를 예측하는 머신러닝 모델을 개발했습니다. 데이터 부족 문제를 해결하기 위해 데이터 시뮬레이션 및 증강 기법을 적용했습니다.</p>
-                <p><strong>주요 역할:</strong></p>
+
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">Spring Boot</span>
+                    <span class="tech-tag">MongoDB Atlas</span>
+                    <span class="tech-tag">OpenAI GPT-5</span>
+                    <span class="tech-tag">RAG</span>
+                    <span class="tech-tag">Vector Store</span>
+                    <span class="tech-tag">CLOVA STT</span>
+                    <span class="tech-tag">Google Cloud TTS</span>
+                    <span class="tech-tag">ECOS API</span>
+                    <span class="tech-tag">FRED API</span>
+                    <span class="tech-tag">yFinance</span>
+                </div>
+
+                <p style="margin-top: 20px;"><strong>프로젝트 성과</strong></p>
                 <ul>
-                    <li>Scikit-learn을 활용하여 시계열 예측 모델을 구현하고 성능 평가</li>
-                    <li>클래스 불균형 문제를 완화하기 위한 데이터 처리 및 모델링 전략 수립</li>
+                    <li>실시간 경제 데이터 통합 조회 시스템 구축으로 사용자 편의성 향상</li>
+                    <li>RAG 기반 문서 검색으로 챗봇 응답 정확도 개선</li>
+                    <li>음성 인터페이스 구현으로 접근성 확대</li>
+                    <li>팀 프로젝트 리딩 경험 및 백엔드 아키텍처 설계 역량 강화</li>
                 </ul>
-                <p><strong>사용한 기술:</strong> <code>Python</code>, <code>Scikit-learn</code>, <code>Pandas</code></p>
             </div>
         </section>
 
         <section id="education">
-            <h2>학력 (Education)</h2>
-            <ul>
-                <li><strong>한양사이버대학교 컴퓨터공학과</strong> (2025.03 ~ 휴학 중)</li>
-                <li><strong>대구일마이스터고등학교 생산자동화과</strong> (2016.03 ~ 2021.01 졸업)</li>
+            <h2>학력</h2>
+            <ul class="education-list">
+                <li>
+                    <strong>한양사이버대학교</strong> 컴퓨터공학과<br>
+                    <span style="color: #6c757d;">2025.03 ~ 현재 (휴학 중)</span>
+                </li>
+                <li>
+                    <strong>대구일마이스터고등학교</strong> 생산자동화과<br>
+                    <span style="color: #6c757d;">2016.03 ~ 2021.01 (졸업)</span>
+                </li>
             </ul>
         </section>
 
         <section id="experience">
-            <h2>경력 (Experience)</h2>
-            <p>신입 (Entry-Level)</p>
+            <h2>경력</h2>
+            <ul class="experience-list">
+                <li>신입 (Entry-Level)</li>
+            </ul>
         </section>
     </div>
 </body>
