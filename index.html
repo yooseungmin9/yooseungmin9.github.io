@@ -3,41 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이력서</title>
-    <link rel="stylesheet" href="styles2.css">
+    <title>유승민 | 이력서</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .resume {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #2c3e50;
+        }
+        header p {
+            margin: 5px 0 0;
+            color: #555;
+            font-size: 1em;
+        }
+        header a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        header a:hover {
+            text-decoration: underline;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.8em;
+            color: #34495e;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-size: 1.4em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .project {
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 3px solid #ecf0f1;
+        }
+        .project p, .project ul {
+            margin: 5px 0;
+        }
+        .project ul {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+        .skills-list li {
+            background-color: #ecf0f1;
+            padding: 8px 12px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+        .skills-list strong {
+            color: #2c3e50;
+        }
+        code {
+            background-color: #e8e8e8;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
 <body>
-<div class="resume">
-    <header>
-        <h1>유승민</h1>
-        <p>이메일: 2win0min@naver.com | 전화번호: 010-5958-0369 | 주소: 대구광역시 수성구 효행로24</p>
-    </header>
-    <section>
-        <h2>프로필</h2>
-        <p>효과적으로 문제를 해결하고 창의적인 해결책을 제시하는 개발자입니다. 팀과의 협력을 중시하며 새로운 기술을 배우고 적용하는 것을 좋아합니다.</p>
-    </section>
-    <section>
-        <h2>신입</h2>
-    </section>
-    <section>
-        <h2>교육</h2>
-        <li>대구일마이스터고등학교 생산자동화과 2016.03 - 2021.01</li>
-        <li>한양사이버대학교 컴퓨터공학과 2025.03 - 휴학중</li>
-    </section>
-    <section>
-    <h2>기술</h2>
-    <ul>
-        <li><strong>프로그래밍 언어:</strong> Python</li>
-        <li><strong>백엔드 프레임워크:</strong> FastAPI, Spring Boot</li>
-        <li><strong>데이터베이스:</strong> Oracle Database, MongoDB</li>
-        <li><strong>버전 관리:</strong> Git, GitHub</li>
-        <li><strong>DevOps:</strong> Docker</li>
-        <li><strong>개발 도구:</strong> PyCharm, IntelliJ IDEA, VS Code, Jupyter Notebook</li>
-    </ul>
-</section>
+    <div class="resume">
+        <header>
+            <h1>유승민 | Back-end Developer</h1>
+            <p>
+                <a href="mailto:2win0min@naver.com">2win0min@naver.com</a> | 010-5958-0369
+            </p>
+        </header>
 
-</div>
+        <section id="profile">
+            <h2>소개 (Profile)</h2>
+            <p>
+                문제를 논리적으로 분석하고 창의적인 해결책을 제시하는 신입 개발자입니다. 팀원들과의 협업을 중요하게 생각하며, FastAPI, Spring Boot 등 새로운 백엔드 기술을 배우고 프로젝트에 적용하는 것을 즐깁니다. 데이터 처리 및 분석, AI 모델 연동을 통해 가치 있는 서비스를 만드는 데 관심이 많습니다.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>보유 기술 (Skills)</h2>
+            <ul>
+                <li><strong>Programming Language:</strong> Python</li>
+                <li><strong>Backend Framework:</strong> FastAPI, Spring Boot</li>
+                <li><strong>Database:</strong> Oracle, MongoDB</li>
+                <li><strong>DevOps:</strong> Docker</li>
+                <li><strong>Version Control:</strong> Git, GitHub</li>
+                <li><strong>Development Tools:</strong> PyCharm, IntelliJ IDEA, VS Code, Jupyter Notebook</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>프로젝트 경험 (Projects)</h2>
+            <div class="project">
+                <h3>AI 기반 경제 뉴스 분석 및 챗봇 시스템 (2025)</h3>
+                <p><strong>설명:</strong> 실시간으로 경제 뉴스를 수집하고, RAG(Retrieval-Augmented Generation) 기술을 적용하여 사용자 질문에 답변하는 AI 챗봇 및 데이터 분석 백엔드 시스템을 개발했습니다.</p>
+                <p><strong>주요 역할:</strong></p>
+                <ul>
+                    <li>FastAPI를 사용하여 뉴스 데이터 수집 및 정보 제공을 위한 API 엔드포인트 개발</li>
+                    <li>MongoDB Atlas를 활용하여 수집된 뉴스 데이터 및 분석 결과를 효율적으로 저장 및 관리</li>
+                    <li>GPT와 같은 LLM을 연동하고, Streaming API를 구현하여 실시간 답변 생성 기능 개발</li>
+                </ul>
+                <p><strong>사용한 기술:</strong> <code>Python</code>, <code>FastAPI</code>, <code>MongoDB</code>, <code>GCP</code>, <code>RAG</code>, <code>LLM</code></p>
+            </div>
+            <div class="project">
+                <h3>의료 영상(CT) 분석 및 종양 분류 모델 개발 (2025)</h3>
+                <p><strong>설명:</strong> 2D 폐 CT 이미지 슬라이스를 전처리하고, 딥러닝 모델을 활용하여 종양을 분류하는 프로젝트를 진행했습니다. 제한된 리소스 환경을 고려하여 모델 경량화(Pruning, Quantization)를 실험했습니다.</p>
+                <p><strong>주요 역할:</strong></p>
+                <ul>
+                    <li>PyTorch를 사용하여 CT 이미지 분류 모델 설계 및 학습 파이프라인 구축</li>
+                    <li>데이터 불균형 문제를 해결하기 위한 데이터 전처리 및 증강 기법 적용</li>
+                </ul>
+                <p><strong>사용한 기술:</strong> <code>Python</code>, <code>PyTorch</code>, <code>Pandas</code>, <code>Google Colab</code></p>
+            </div>
+            <div class="project">
+                <h3>인구 밀집도 및 위험 예측 모델 개발 (2025)</h3>
+                <p><strong>설명:</strong> 특정 장소와 날짜의 24시간 인구 밀집도와 관련 위험도를 예측하는 머신러닝 모델을 개발했습니다. 데이터 부족 문제를 해결하기 위해 데이터 시뮬레이션 및 증강 기법을 적용했습니다.</p>
+                <p><strong>주요 역할:</strong></p>
+                <ul>
+                    <li>Scikit-learn을 활용하여 시계열 예측 모델을 구현하고 성능 평가</li>
+                    <li>클래스 불균형 문제를 완화하기 위한 데이터 처리 및 모델링 전략 수립</li>
+                </ul>
+                <p><strong>사용한 기술:</strong> <code>Python</code>, <code>Scikit-learn</code>, <code>Pandas</code></p>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>학력 (Education)</h2>
+            <ul>
+                <li><strong>한양사이버대학교 컴퓨터공학과</strong> (2025.03 ~ 휴학 중)</li>
+                <li><strong>대구일마이스터고등학교 생산자동화과</strong> (2016.03 ~ 2021.01 졸업)</li>
+            </ul>
+        </section>
+
+        <section id="experience">
+            <h2>경력 (Experience)</h2>
+            <p>신입 (Entry-Level)</p>
+        </section>
+    </div>
 </body>
 </html>
-
-
