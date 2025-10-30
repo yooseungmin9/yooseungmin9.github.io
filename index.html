@@ -290,258 +290,241 @@
     </style>
 </head>
 <body>
-    <div class="resume">
-        <header>
-            <h1>유승민</h1>
-            <p style="font-size: 1.3em; color: #495057; margin: 10px 0;">Backend Developer</p>
+<div class="resume">
+    <header>
+        <h1>유승민</h1>
+        <p style="font-size: 1.3em; color: #495057; margin: 10px 0;">AI & LLM Developer</p>
+        <p>
+            <a href="mailto:2win0min@naver.com">2win0min@naver.com</a> |
+            <a href="tel:010-5958-0369">010-5958-0369</a>
+        </p>
+    </header>
+
+    <section id="profile">
+        <h2>소개</h2>
+        <p class="profile-text">
+            AI 기술을 통해 실질적인 가치를 창출하는 개발자가 되고자 합니다. 
+            부트캠프 과정에서 RAG 기반 경제정보 챗봇 시스템을 설계하며 LLM의 실제 서비스 적용 과정을 경험했습니다. 
+            GPT Function Calling과 Vector Store를 활용한 문서 검색 시스템 구축, 실시간 API 통합, STT/TTS 음성 인터페이스 개발 등을 통해
+            AI 모델을 사용자 중심 서비스로 구현하는 방법을 익혔습니다. 단순히 모델을 학습시키는 것을 넘어, 사용자가 실제로 활용할 수 있는 AI 서비스를 만들고 싶습니다. 
+            지속적인 학습과 실험을 통해 LLM 기술의 가능성을 탐구하며, 팀 협업을 통해 더 나은 솔루션을 만들어가는 개발자로 성장하겠습니다.
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2>보유 기술</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                <p>Python</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI">
+                <p>FastAPI</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">
+                <p>Spring Boot</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                <p>MongoDB</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle">
+                <p>Oracle DB</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                <p>Docker</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                <p>Git</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP">
+                <p>Google Cloud</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>프로젝트 경험</h2>
+
+        <div class="project">
+            <div class="project-header">
+                <h3>SUMMARIX - AI 기반 경제 뉴스 분석 웹서비스</h3>
+                <span class="project-date">2025.09 - 2025.10</span>
+            </div>
+
+            <span class="project-role">기획 총괄 · AI 챗봇 개발</span>
+
+            <p><strong>프로젝트 개요</strong></p>
             <p>
-                <a href="mailto:2win0min@naver.com">2win0min@naver.com</a> | 
-                <a href="tel:010-5958-0369">010-5958-0369</a>
+                경제 뉴스를 효율적으로 분석하고 핵심 이슈와 감성 흐름을 한눈에 파악할 수 있는 AI 기반 플랫폼입니다.
+                GPT-5와 RAG 기술을 결합하여 실시간 경제 질의응답이 가능한 챗봇을 구현했습니다.
             </p>
-        </header>
 
-        <section id="profile">
-            <h2>소개</h2>
-            <p class="profile-text">
-                문제를 논리적으로 분석하고 창의적인 해결책을 제시하는 백엔드 개발자입니다. 
-                FastAPI와 Spring Boot를 활용한 백엔드 아키텍처 설계 경험이 있으며, 
-                AI 기술과 데이터 분석을 결합하여 실질적인 가치를 제공하는 서비스 개발에 열정을 가지고 있습니다. 
-                팀 협업과 새로운 기술 학습을 즐기며, 지속적인 성장을 추구합니다.
-            </p>
-        </section>
+            <p><strong>주요 담당 업무</strong></p>
+            <ul>
+                <li>전체 시스템 아키텍처 설계 및 FastAPI 기반 백엔드 서버 구축</li>
+                <li>GPT-5 Function Calling을 활용한 AI 챗봇 개발 (실시간 경제지표 조회, RAG 기반 문서 검색)</li>
+                <li>MongoDB Atlas 연동으로 최신 뉴스 데이터 실시간 수집 및 관리</li>
+                <li>ECOS(한국은행), FRED(미국 연준), yFinance API 통합하여 경제지표 자동 조회 시스템 구현</li>
+                <li>CLOVA STT와 Google Cloud TTS 연동으로 음성 대화 기능 구현</li>
+                <li>Vector Store 기반 RAG 시스템 구축 및 자동 문서 갱신 파이프라인 개발</li>
+                <li>팀 협업 관리 및 일정 조율, 최종 발표 준비</li>
+            </ul>
 
-        <section id="skills">
-            <h2>보유 기술</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-                    <p>Python</p>
+            <div class="architecture-diagram">
+                <div class="flow-step">
+                    <div class="flow-step-title">1단계: 데이터 수집</div>
+                    <div class="flow-step-content">
+                        NAVER News API로 경제 뉴스 수집 · YouTube API로 영상 데이터 수집<br>
+                        ECOS API로 한국 경제지표 수집 · FRED API로 미국 경제지표 수집 · yFinance로 실시간 주가/환율 데이터 수집
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI">
-                    <p>FastAPI</p>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-step">
+                    <div class="flow-step-title">2단계: 데이터 저장</div>
+                    <div class="flow-step-content">
+                        MongoDB Atlas (chatbot_rag 데이터베이스)에 수집된 모든 데이터 저장 및 관리
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">
-                    <p>Spring Boot</p>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-step">
+                    <div class="flow-step-title">3단계: AI 분석 처리</div>
+                    <div class="flow-step-content">
+                        KoBART Summarizer로 뉴스 요약 생성 · Sentiment Analysis로 감성 분석 수행<br>
+                        GPT-5 Labeling으로 주요 키워드 및 카테고리 자동 분류
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
-                    <p>MongoDB</p>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-step">
+                    <div class="flow-step-title">4단계: AI 챗봇 엔진</div>
+                    <div class="flow-step-content">
+                        GPT-5 Function Calling으로 사용자 질의 분석 및 함수 호출<br>
+                        Vector Store 기반 RAG로 관련 문서 검색 및 컨텍스트 제공
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle">
-                    <p>Oracle DB</p>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-step">
+                    <div class="flow-step-title">5단계: 웹 서비스 통합</div>
+                    <div class="flow-step-content">
+                        Spring Boot (8081) ↔ FastAPI (8002~8009) 간 RESTful API 통신<br>
+                        Thymeleaf 템플릿 엔진으로 동적 페이지 렌더링
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
-                    <p>Docker</p>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
-                    <p>Git</p>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP">
-                    <p>Google Cloud</p>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-step">
+                    <div class="flow-step-title">6단계: 사용자 인터페이스</div>
+                    <div class="flow-step-content">
+                        실시간 대시보드로 경제 지표 시각화 · 뉴스 요약 자동 제공<br>
+                        AI 챗봇 대화 인터페이스 · Chart.js로 감성 분석 결과 그래프 표시
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <section id="projects">
-            <h2>프로젝트 경험</h2>
-            
-            <div class="project">
-                <div class="project-header">
-                    <h3>SUMMARIX - AI 기반 경제 뉴스 분석 웹서비스</h3>
-                    <span class="project-date">2025.09 - 2025.10</span>
-                </div>
-                
-                <span class="project-role">기획 총괄 · AI 챗봇 개발</span>
-                
-                <p><strong>프로젝트 개요</strong></p>
-                <p>
-                    경제 뉴스를 효율적으로 분석하고 핵심 이슈와 감성 흐름을 한눈에 파악할 수 있는 AI 기반 플랫폼입니다. 
-                    GPT-5와 RAG 기술을 결합하여 실시간 경제 질의응답이 가능한 챗봇을 구현했습니다.
-                </p>
+            <p><strong>핵심 기술 구현</strong></p>
+            <ul>
+                <li><strong>Function Calling 구조:</strong> get_latest_news(), get_indicator(), get_market(), search_docs() 함수를 통해 실시간 데이터 조회</li>
+                <li><strong>RAG 시스템:</strong> watcher.py를 통한 문서 자동 감시 및 Vector Store 실시간 갱신</li>
+                <li><strong>API 엔드포인트:</strong> /chat, /tts, /stt, /rag/docs 등 RESTful API 설계</li>
+            </ul>
 
-                <p><strong>주요 담당 업무</strong></p>
-                <ul>
-                    <li>전체 시스템 아키텍처 설계 및 FastAPI 기반 백엔드 서버 구축</li>
-                    <li>GPT-5 Function Calling을 활용한 AI 챗봇 개발 (실시간 경제지표 조회, RAG 기반 문서 검색)</li>
-                    <li>MongoDB Atlas 연동으로 최신 뉴스 데이터 실시간 수집 및 관리</li>
-                    <li>ECOS(한국은행), FRED(미국 연준), yFinance API 통합하여 경제지표 자동 조회 시스템 구현</li>
-                    <li>CLOVA STT와 Google Cloud TTS 연동으로 음성 대화 기능 구현</li>
-                    <li>Vector Store 기반 RAG 시스템 구축 및 자동 문서 갱신 파이프라인 개발</li>
-                    <li>팀 협업 관리 및 일정 조율, 최종 발표 준비</li>
-                </ul>
+            <p><strong>사용 기술 스택</strong></p>
 
-                <div class="architecture-diagram">
-                    <div class="flow-step">
-                        <div class="flow-step-title">1단계: 데이터 수집</div>
-                        <div class="flow-step-content">
-                            NAVER News API로 경제 뉴스 수집 · YouTube API로 영상 데이터 수집<br>
-                            ECOS API로 한국 경제지표 수집 · FRED API로 미국 경제지표 수집 · yFinance로 실시간 주가/환율 데이터 수집
-                        </div>
+            <div class="tech-category">
+                <h4>Backend & AI</h4>
+                <div class="tech-stack-grid">
+                    <div class="tech-stack-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI">
+                        <p>FastAPI</p>
                     </div>
-                    <div class="flow-arrow">↓</div>
-                    <div class="flow-step">
-                        <div class="flow-step-title">2단계: 데이터 저장</div>
-                        <div class="flow-step-content">
-                            MongoDB Atlas (chatbot_rag 데이터베이스)에 수집된 모든 데이터 저장 및 관리
-                        </div>
+                    <div class="tech-stack-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                        <p>Python</p>
                     </div>
-                    <div class="flow-arrow">↓</div>
-                    <div class="flow-step">
-                        <div class="flow-step-title">3단계: AI 분석 처리</div>
-                        <div class="flow-step-content">
-                            KoBART Summarizer로 뉴스 요약 생성 · Sentiment Analysis로 감성 분석 수행<br>
-                            GPT-5 Labeling으로 주요 키워드 및 카테고리 자동 분류
-                        </div>
+                    <div class="tech-stack-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="OpenAI">
+                        <p>GPT-5</p>
                     </div>
-                    <div class="flow-arrow">↓</div>
-                    <div class="flow-step">
-                        <div class="flow-step-title">4단계: AI 챗봇 엔진</div>
-                        <div class="flow-step-content">
-                            GPT-5 Function Calling으로 사용자 질의 분석 및 함수 호출<br>
-                            Vector Store 기반 RAG로 관련 문서 검색 및 컨텍스트 제공
-                        </div>
-                    </div>
-                    <div class="flow-arrow">↓</div>
-                    <div class="flow-step">
-                        <div class="flow-step-title">5단계: 웹 서비스 통합</div>
-                        <div class="flow-step-content">
-                            Spring Boot (8081) ↔ FastAPI (8002~8009) 간 RESTful API 통신<br>
-                            Thymeleaf 템플릿 엔진으로 동적 페이지 렌더링
-                        </div>
-                    </div>
-                    <div class="flow-arrow">↓</div>
-                    <div class="flow-step">
-                        <div class="flow-step-title">6단계: 사용자 인터페이스</div>
-                        <div class="flow-step-content">
-                            실시간 대시보드로 경제 지표 시각화 · 뉴스 요약 자동 제공<br>
-                            AI 챗봇 대화 인터페이스 · Chart.js로 감성 분석 결과 그래프 표시
-                        </div>
+                    <div class="tech-stack-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
+                        <p>Pandas</p>
                     </div>
                 </div>
-
-                <p><strong>핵심 기술 구현</strong></p>
-                <ul>
-                    <li><strong>Function Calling 구조:</strong> get_latest_news(), get_indicator(), get_market(), search_docs() 함수를 통해 실시간 데이터 조회</li>
-                    <li><strong>RAG 시스템:</strong> watcher.py를 통한 문서 자동 감시 및 Vector Store 실시간 갱신</li>
-                    <li><strong>API 엔드포인트:</strong> /chat, /tts, /stt, /rag/docs 등 RESTful API 설계</li>
-                </ul>
-
-                <p><strong>사용 기술 스택</strong></p>
-                
-                <div class="tech-category">
-                    <h4>Backend & AI</h4>
-                    <div class="tech-stack-grid">
-                        <div class="tech-stack-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI">
-                            <p>FastAPI</p>
-                        </div>
-                        <div class="tech-stack-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-                            <p>Python</p>
-                        </div>
-                        <div class="tech-stack-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="OpenAI">
-                            <p>GPT-5</p>
-                        </div>
-                        <div class="tech-stack-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
-                            <p>Pandas</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tech-category">
-                    <h4>STT & TTS</h4>
-                    <div class="tech-stack-grid">
-                        <div class="tech-stack-item">
-                            <img src="https://www.ncloud-img.com/logo/2020/naver-logo-green_20191231.png" alt="CLOVA">
-                            <p>CLOVA STT</p>
-                        </div>
-                        <div class="tech-stack-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP TTS">
-                            <p>GCP TTS</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tech-category">
-                    <h4>Database</h4>
-                    <div class="tech-stack-grid">
-                        <div class="tech-stack-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
-                            <p>MongoDB Atlas</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tech-category">
-                    <h4>Data Source APIs</h4>
-                    <div class="tech-stack-grid">
-                        <div class="tech-stack-item">
-                            <img src="https://www.ncloud-img.com/logo/2020/naver-logo-green_20191231.png" alt="NAVER">
-                            <p>NAVER API</p>
-                        </div>
-                        <div class="tech-stack-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/512px-YouTube_Logo_2017.svg.png" alt="YouTube">
-                            <p>YouTube API</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tech-category">
-                    <h4>Frontend Integration</h4>
-                    <div class="tech-stack-grid">
-                        <div class="tech-stack-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">
-                            <p>Spring Boot</p>
-                        </div>
-                        <div class="tech-stack-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="Thymeleaf">
-                            <p>Thymeleaf</p>
-                        </div>
-                        <div class="tech-stack-item">
-                            <img src="https://www.chartjs.org/img/chartjs-logo.svg" alt="Chart.js">
-                            <p>Chart.js</p>
-                        </div>
-                    </div>
-                </div>
-
-                <p style="margin-top: 20px;"><strong>프로젝트 성과</strong></p>
-                <ul>
-                    <li>실시간 경제 데이터 통합 조회 시스템 구축으로 사용자 편의성 향상</li>
-                    <li>RAG 기반 문서 검색으로 챗봇 응답 정확도 개선</li>
-                    <li>음성 인터페이스 구현으로 접근성 확대</li>
-                    <li>팀 프로젝트 리딩 경험 및 백엔드 아키텍처 설계 역량 강화</li>
-                </ul>
             </div>
-        </section>
 
-        <section id="education">
-            <h2>학력</h2>
-            <ul class="education-list">
-                <li>
-                    <strong>한양사이버대학교</strong> 컴퓨터공학과<br>
-                    <span style="color: #6c757d;">2025.03 ~ 현재 (휴학 중)</span>
-                </li>
-                <li>
-                    <strong>대구일마이스터고등학교</strong> 생산자동화과<br>
-                    <span style="color: #6c757d;">2016.03 ~ 2021.01 (졸업)</span>
-                </li>
-            </ul>
-        </section>
+            <div class="tech-category">
+                <h4>STT & TTS</h4>
+                <div class="tech-stack-grid">
+                    <div class="tech-stack-item">
+                        <img src="img/Clova_assistant_icon.svg" alt="CLOVA">
+                        <p>CLOVA STT</p>
+                    </div>
+                    <div class="tech-stack-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP TTS">
+                        <p>GCP TTS</p>
+                    </div>
+                </div>
+            </div>
 
-        <section id="experience">
-            <h2>경력</h2>
-            <ul class="experience-list">
-                <li>신입 (Entry-Level)</li>
+            <div class="tech-category">
+                <h4>Database</h4>
+                <div class="tech-stack-grid">
+                    <div class="tech-stack-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                        <p>MongoDB Atlas</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h4>Data Source APIs</h4>
+                <div class="tech-stack-grid">
+                    <div class="tech-stack-item">
+                        <img src="https://www.ncloud-img.com/logo/2020/naver-logo-green_20191231.png" alt="NAVER">
+                        <p>NAVER API</p>
+                    </div>
+                    <div class="tech-stack-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/512px-YouTube_Logo_2017.svg.png" alt="YouTube">
+                        <p>YouTube API</p>
+                    </div>
+                </div>
+            </div>
+
+            <p style="margin-top: 20px;"><strong>프로젝트 성과</strong></p>
+            <ul>
+                <li>실시간 경제 데이터 통합 조회 시스템 구축으로 사용자 편의성 향상</li>
+                <li>RAG 기반 문서 검색으로 챗봇 응답 정확도 개선</li>
+                <li>음성 인터페이스 구현으로 접근성 확대</li>
+                <li>팀 프로젝트 리딩 경험 및 백엔드 아키텍처 설계 역량 강화</li>
             </ul>
-        </section>
-    </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>학력</h2>
+        <ul class="education-list">
+            <li>
+                <strong>한양사이버대학교</strong> 컴퓨터공학과<br>
+                <span style="color: #6c757d;">2025.03 ~ 현재 (휴학 중)</span>
+            </li>
+            <li>
+                <strong>대구일마이스터고등학교</strong> 생산자동화과<br>
+                <span style="color: #6c757d;">2016.03 ~ 2021.01 (졸업)</span>
+            </li>
+        </ul>
+    </section>
+
+    <section id="experience">
+        <h2>경력</h2>
+        <ul class="experience-list">
+            <li>신입 (Entry-Level)</li>
+        </ul>
+    </section>
+</div>
 </body>
 </html>
