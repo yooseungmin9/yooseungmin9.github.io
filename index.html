@@ -50,7 +50,7 @@
             -webkit-backdrop-filter: blur(30px);
             border-radius: 28px;
             border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2),
             inset 0 1px 1px rgb(255, 255, 255);
             position: relative;
         }
@@ -159,7 +159,7 @@
             -webkit-backdrop-filter: blur(20px);
             border-radius: 18px;
             border: 1px solid rgba(255, 255, 255, 0);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3),
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2),
             inset 0 1px 1px rgb(255, 255, 255);
             transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
             min-height: 110px;
@@ -171,22 +171,17 @@
 
         .skill-item:hover {
             background: rgba(255, 255, 255, 0);
-            border-color: rgba(255, 255, 255, 0);
+            border-color: rgba(255, 255, 255, 0.35);
             transform: translateY(-1px);
             box-shadow: 0 12px 40px rgba(13, 110, 253, 0.5),
             inset 0 1px 1px rgb(255, 255, 255);
-        }
-
-        .skill-item:active {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 15px rgb(255, 255, 255);
         }
 
         .skill-item img {
             width: 45px;
             height: 45px;
             margin-bottom: 8px;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0));
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
         }
 
         .skill-item p {
@@ -194,25 +189,35 @@
             color: #000000;
             font-weight: 500;
             word-break: break-word;
+
+        }
+
+        #skills2 .skill-item {
+            background: rgba(255, 255, 255, 0.01);
+        }
+
+        #skills2 .skill-item:hover {
+            background: rgba(255, 255, 255, 0);
+            border-color: rgba(255, 255, 255, 0.35);
         }
 
         /* ========== PROJECTS (Liquid Glass 스타일) ========== */
         .project {
             margin-bottom: 25px;
             padding: 20px 15px;
-            background: rgba(255, 255, 255, 0);
+            background: rgba(255, 255, 255, 0.01);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3),
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2),
             inset 0 1px 1px rgb(255, 255, 255);
             transition: all 0.3s ease;
         }
 
         .project:hover {
             background: rgba(255, 255, 255, 0);
-            border-color: rgba(255, 255, 255, 0);
+            border-color: rgba(255, 255, 255, 0.35);
             transform: translateY(-1px);
             box-shadow: 0 12px 40px rgba(13, 110, 253, 0.5),
             inset 0 1px 1px rgb(255, 255, 255);
@@ -288,13 +293,13 @@
             background: rgba(255, 255, 255, 0);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0);
+            border: 1px solid rgba(255, 255, 255, 0.35);
             border-radius: 14px;
             padding: 15px;
             margin-bottom: 10px;
             font-size: 0.9rem;
             transform: translateY(-1px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1),
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2),
             inset 0 1px 1px rgb(255, 255, 255);
         }
 
@@ -349,7 +354,7 @@
 
         .link-group a img {
             vertical-align: middle;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
         }
 
         /* ========== PDF ========== */
