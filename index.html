@@ -34,7 +34,7 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
 
-        /* 헤더 최적화 */
+        /* ========== HEADER ========== */
         header {
             text-align: center;
             border-bottom: 3px solid #e9ecef;
@@ -59,7 +59,6 @@
 
         .header-contact {
             margin: 15px 0;
-            word-break: break-word;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -71,6 +70,7 @@
             text-decoration: none;
             padding: 8px 0;
             display: inline-block;
+            transition: opacity 0.2s;
         }
 
         header a:active {
@@ -84,7 +84,7 @@
             display: inline;
         }
 
-        /* 섹션 간격 조정 */
+        /* ========== SECTIONS & TYPOGRAPHY ========== */
         section {
             margin-bottom: 30px;
         }
@@ -113,10 +113,10 @@
             color: #495057;
         }
 
-        /* 기술 스택 그리드 - 모바일 최적화 */
+        /* ========== SKILLS GRID ========== */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            grid-template-columns: repeat(5, 1fr);
             gap: 12px;
             margin-top: 15px;
         }
@@ -152,7 +152,7 @@
             word-break: break-word;
         }
 
-        /* 프로젝트 카드 최적화 */
+        /* ========== PROJECTS ========== */
         .project {
             margin-bottom: 25px;
             padding: 20px 15px;
@@ -210,47 +210,13 @@
             font-size: 0.95rem;
         }
 
-        /* 테크 스택 그리드 */
-        .tech-stack-grid {
+        .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
-        .tech-stack-item {
-            text-align: center;
-            padding: 12px 8px;
-            background-color: #fff;
-            border-radius: 8px;
-            border: 1px solid #e9ecef;
-            transition: all 0.2s;
-            min-height: 100px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .tech-stack-item:active {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(13, 110, 253, 0.15);
-            border-color: #0d6efd;
-        }
-
-        .tech-stack-item img {
-            width: 40px;
-            height: 40px;
-            margin-bottom: 6px;
-        }
-
-        .tech-stack-item p {
-            font-size: 0.8rem;
-            color: #495057;
-            font-weight: 500;
-            word-break: break-word;
-        }
-
-        /* 아키텍처 다이어그램 */
+        /* ========== ARCHITECTURE DIAGRAM ========== */
         .architecture-diagram {
             max-width: 800px;
             margin: 0 auto;
@@ -286,32 +252,31 @@
             line-height: 1;
         }
 
-        /* 반응형 그리드 */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+        /* ========== LINKS ========== */
+        .link-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin: 10px 0;
         }
 
-        /* 학력/경력 리스트 */
-        .education-list,
-        .experience-list {
-            list-style: none;
+        .link-group a {
+            padding: 8px 0;
+            display: inline-flex;
+            align-items: center;
+            transition: opacity 0.2s;
         }
 
-        .education-list li,
-        .experience-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid #e9ecef;
-            font-size: 0.95rem;
+        .link-group a:active {
+            opacity: 0.7;
         }
 
-        .education-list li:last-child,
-        .experience-list li:last-child {
-            border-bottom: none;
+        .link-group a img {
+            vertical-align: middle;
         }
 
-        /* PDF 반응형 처리 */
+        /* ========== PDF ========== */
         .pdf-container {
             position: relative;
             width: 100%;
@@ -331,23 +296,75 @@
             border-radius: 8px;
         }
 
-        /* 링크 그룹 */
-        .link-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            align-items: center;
-            margin: 10px 0;
+        /* ========== LISTS ========== */
+        .education-list,
+        .experience-list {
+            list-style: none;
         }
 
-        .link-group a {
-            padding: 8px 0;
-            display: inline-flex;
-            align-items: center;
+        .education-list li,
+        .experience-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e9ecef;
+            font-size: 0.95rem;
         }
 
-        .link-group a img {
-            vertical-align: middle;
+        .education-list li:last-child,
+        .experience-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* ========== RESPONSIVE DESIGN ========== */
+
+        /* 데스크톱 레이아웃 (769px 이상) */
+        @media (min-width: 769px) {
+            header h1 {
+                font-size: 2.8rem;
+            }
+
+            .header-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+
+            .project-header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .project-date {
+                align-self: auto;
+                white-space: nowrap;
+            }
+
+            .skill-item:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        /* 태블릿 레이아웃 (481px - 768px) */
+        @media (max-width: 768px) and (min-width: 481px) {
+            .resume {
+                margin: 15px;
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* 모바일 레이아웃 (480px 이하) */
@@ -369,6 +386,14 @@
                 font-size: 1rem;
             }
 
+            .contact-divider {
+                display: none;
+            }
+
+            .header-contact {
+                gap: 0;
+            }
+
             h2 {
                 font-size: 1.3rem;
                 margin-bottom: 15px;
@@ -380,7 +405,7 @@
             }
 
             .skills-grid {
-                grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+                grid-template-columns: repeat(3, 1fr);
                 gap: 10px;
             }
 
@@ -411,10 +436,6 @@
                 font-size: 0.9rem;
             }
 
-            .tech-stack-grid {
-                grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-            }
-
             .flow-step {
                 padding: 12px;
                 margin-bottom: 8px;
@@ -430,71 +451,6 @@
 
             .project-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .contact-divider {
-                display: none;
-            }
-
-            .header-contact {
-                gap: 0;
-            }
-        }
-
-        /* 태블릿 레이아웃 (481px - 768px) */
-        @media (max-width: 768px) and (min-width: 481px) {
-            .resume {
-                margin: 15px;
-                padding: 20px;
-            }
-
-            header h1 {
-                font-size: 2rem;
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            }
-
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* 데스크톱 레이아웃 (769px 이상) */
-        @media (min-width: 769px) {
-            header h1 {
-                font-size: 2.8rem;
-            }
-
-            .header-subtitle {
-                font-size: 1.3rem;
-            }
-
-            .project-header {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            .project-date {
-                align-self: auto;
-                white-space: nowrap;
-            }
-
-            .project-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            }
-
-            .skill-item:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-            }
-
-            .tech-stack-item:hover {
-                transform: translateY(-3px);
-                box-shadow: 0 4px 12px rgba(13, 110, 253, 0.15);
-                border-color: #0d6efd;
             }
         }
     </style>
@@ -762,7 +718,7 @@
             </div>
 
             <div class="pdf-container">
-                <iframe src="img/고객등급예측.pdf"></iframe>
+                <iframe src="img/고객등급예측.pdf"></iframe>
             </div>
 
             <p style="margin-top: 20px;"><strong>프로젝트 성과</strong></p>
