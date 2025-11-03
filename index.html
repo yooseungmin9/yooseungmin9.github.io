@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta property="og:image" content="img/thumnail.png" />
+    <meta property="og:image" content="img/thumnail.png" />
     <title>유승민 | 이력서</title>
     <link rel="icon" type="image/x-icon"
           href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
@@ -12,6 +12,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
         }
 
         body {
@@ -23,103 +27,135 @@
 
         .resume {
             max-width: 900px;
-            margin: 40px auto;
-            padding: 40px;
+            margin: 20px auto;
+            padding: 20px;
             background-color: #fff;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
 
+        /* 헤더 최적화 */
         header {
             text-align: center;
             border-bottom: 3px solid #e9ecef;
-            padding-bottom: 25px;
-            margin-bottom: 40px;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         header h1 {
-            font-size: 2.8em;
+            font-size: 1.8rem;
             color: #212529;
             margin-bottom: 10px;
             font-weight: 700;
+            word-break: break-word;
         }
 
-        header p {
-            color: #6c757d;
-            font-size: 1.1em;
+        .header-subtitle {
+            font-size: 1.1rem;
+            color: #495057;
+            margin: 10px 0;
+            word-break: break-word;
+        }
+
+        .header-contact {
+            margin: 15px 0;
+            word-break: break-word;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
         }
 
         header a {
             color: #000000;
             text-decoration: none;
-            margin: 0 10px;
+            padding: 8px 0;
+            display: inline-block;
         }
 
-        header a:hover {
+        header a:active {
             text-decoration: underline;
+            opacity: 0.7;
         }
 
+        .contact-divider {
+            color: #6c757d;
+            margin: 0 4px;
+            display: inline;
+        }
+
+        /* 섹션 간격 조정 */
         section {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         h2 {
-            font-size: 1.9em;
+            font-size: 1.5rem;
             color: #212529;
             border-bottom: 3px solid #000000;
             padding-bottom: 12px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             font-weight: 600;
+            word-break: break-word;
         }
 
         h3 {
-            font-size: 1.5em;
+            font-size: 1.2rem;
             color: #495057;
             margin-bottom: 12px;
             font-weight: 600;
+            word-break: break-word;
         }
 
         .profile-text {
-            font-size: 1.05em;
+            font-size: 0.95rem;
             line-height: 1.8;
             color: #495057;
         }
 
+        /* 기술 스택 그리드 - 모바일 최적화 */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
         }
 
         .skill-item {
             text-align: center;
-            padding: 20px;
+            padding: 15px 10px;
             background-color: #f8f9fa;
             border-radius: 8px;
             transition: transform 0.2s, box-shadow 0.2s;
+            min-height: 110px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        .skill-item:hover {
-            transform: translateY(-5px);
+        .skill-item:active {
+            transform: translateY(-3px);
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
         }
 
         .skill-item img {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 10px;
+            width: 45px;
+            height: 45px;
+            margin-bottom: 8px;
         }
 
         .skill-item p {
-            font-size: 0.95em;
+            font-size: 0.85rem;
             color: #495057;
             font-weight: 500;
+            word-break: break-word;
         }
 
+        /* 프로젝트 카드 최적화 */
         .project {
-            margin-bottom: 35px;
-            padding: 25px;
+            margin-bottom: 25px;
+            padding: 20px 15px;
             background-color: #f8f9fa;
             border-radius: 8px;
             border-left: 4px solid #0d6efd;
@@ -127,8 +163,8 @@
 
         .project-header {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            gap: 10px;
             margin-bottom: 15px;
         }
 
@@ -138,78 +174,83 @@
 
         .project-date {
             color: #6c757d;
-            font-size: 0.95em;
+            font-size: 0.9rem;
+            align-self: flex-start;
         }
 
         .project-role {
             background-color: #0d6efd;
             color: white;
-            padding: 4px 12px;
+            padding: 6px 10px;
             border-radius: 4px;
-            font-size: 0.9em;
+            font-size: 0.85rem;
             display: inline-block;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            word-break: break-word;
         }
 
         .project p {
-            margin: 12px 0;
-            line-height: 1.7;
+            margin: 10px 0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .project strong {
+            word-break: break-word;
         }
 
         .project ul {
-            margin: 15px 0;
+            margin: 12px 0;
             padding-left: 20px;
         }
 
         .project li {
             margin-bottom: 8px;
             line-height: 1.6;
+            font-size: 0.95rem;
         }
 
-        .tech-category {
-            margin-bottom: 25px;
-        }
-
-        .tech-category h4 {
-            font-size: 1.1em;
-            color: #495057;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-
+        /* 테크 스택 그리드 */
         .tech-stack-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 12px;
         }
 
         .tech-stack-item {
             text-align: center;
-            padding: 15px 10px;
+            padding: 12px 8px;
             background-color: #fff;
             border-radius: 8px;
             border: 1px solid #e9ecef;
             transition: all 0.2s;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        .tech-stack-item:hover {
-            transform: translateY(-3px);
+        .tech-stack-item:active {
+            transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(13, 110, 253, 0.15);
             border-color: #0d6efd;
         }
 
         .tech-stack-item img {
-            width: 45px;
-            height: 45px;
-            margin-bottom: 8px;
+            width: 40px;
+            height: 40px;
+            margin-bottom: 6px;
         }
 
         .tech-stack-item p {
-            font-size: 0.85em;
+            font-size: 0.8rem;
             color: #495057;
             font-weight: 500;
+            word-break: break-word;
         }
 
+        /* 아키텍처 다이어그램 */
         .architecture-diagram {
             max-width: 800px;
             margin: 0 auto;
@@ -219,30 +260,40 @@
             background-color: #f5f5f5;
             border: 1px solid #d0d0d0;
             border-radius: 8px;
-            padding: 16px 20px;
-            margin-bottom: 12px;
+            padding: 15px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
         }
 
         .flow-step-title {
-            font-size: 16px;
+            font-size: 1rem;
             font-weight: 600;
             color: #333;
             margin-bottom: 8px;
         }
 
         .flow-step-content {
-            font-size: 14px;
+            font-size: 0.9rem;
             color: #555;
             line-height: 1.5;
         }
 
         .flow-arrow {
             text-align: center;
-            font-size: 20px;
+            font-size: 1.2rem;
             color: #888;
-            margin: 1px 0;
+            margin: 8px 0;
+            line-height: 1;
         }
 
+        /* 반응형 그리드 */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        /* 학력/경력 리스트 */
         .education-list,
         .experience-list {
             list-style: none;
@@ -252,6 +303,7 @@
         .experience-list li {
             padding: 12px 0;
             border-bottom: 1px solid #e9ecef;
+            font-size: 0.95rem;
         }
 
         .education-list li:last-child,
@@ -259,105 +311,215 @@
             border-bottom: none;
         }
 
-        @media (max-width: 768px) {
+        /* PDF 반응형 처리 */
+        .pdf-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 141.4%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .pdf-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+        }
+
+        /* 링크 그룹 */
+        .link-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .link-group a {
+            padding: 8px 0;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .link-group a img {
+            vertical-align: middle;
+        }
+
+        /* 모바일 레이아웃 (480px 이하) */
+        @media (max-width: 480px) {
             .resume {
-                margin: 20px;
-                padding: 25px;
+                margin: 10px;
+                padding: 15px;
+            }
+
+            html {
+                font-size: 14px;
             }
 
             header h1 {
-                font-size: 2.2em;
+                font-size: 1.6rem;
+            }
+
+            .header-subtitle {
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+                padding-bottom: 10px;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+                gap: 10px;
+            }
+
+            .skill-item {
+                padding: 12px 8px;
+                min-height: 100px;
+            }
+
+            .skill-item img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .skill-item p {
+                font-size: 0.75rem;
+            }
+
+            .project {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+            .project p {
+                font-size: 0.9rem;
+            }
+
+            .project li {
+                font-size: 0.9rem;
+            }
+
+            .tech-stack-grid {
+                grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+            }
+
+            .flow-step {
+                padding: 12px;
+                margin-bottom: 8px;
+            }
+
+            .flow-step-title {
+                font-size: 0.95rem;
+            }
+
+            .flow-step-content {
+                font-size: 0.85rem;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-divider {
+                display: none;
+            }
+
+            .header-contact {
+                gap: 0;
+            }
+        }
+
+        /* 태블릿 레이아웃 (481px - 768px) */
+        @media (max-width: 768px) and (min-width: 481px) {
+            .resume {
+                margin: 15px;
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 2rem;
             }
 
             .skills-grid {
                 grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-                gap: 12px;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 데스크톱 레이아웃 (769px 이상) */
+        @media (min-width: 769px) {
+            header h1 {
+                font-size: 2.8rem;
+            }
+
+            .header-subtitle {
+                font-size: 1.3rem;
             }
 
             .project-header {
-                flex-direction: column;
-                align-items: flex-start;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
             }
 
-        }
+            .project-date {
+                align-self: auto;
+                white-space: nowrap;
+            }
 
-        .tech-legend {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 25px;
-            justify-content: center;
-        }
+            .project-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
 
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.95em;
-        }
+            .skill-item:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            }
 
-        .legend-color {
-            width: 20px;
-            height: 20px;
-            border-radius: 4px;
-        }
-
-        /* 카테고리별 색상 */
-        .category-frontend {
-            border: 3px solid #ff4545;
-            background-color: #fff5f5;
-        }
-
-        .category-backend {
-            border: 3px solid #8ee453;
-            background-color: #eeffde;
-        }
-
-        .category-database {
-            border: 3px solid #58b1ff;
-            background-color: #e7f3ff;
-        }
-
-        .category-ml-dl {
-            border: 3px solid #ff9257;
-            background-color: #fff4e6;
-        }
-
-        .category-nlp {
-            border: 3px solid #FFD93D;
-            background-color: #fffbeb;
-        }
-
-        .category-etc {
-            border: 3px solid #6C5CE7;
-            background-color: #f5f3ff;
-        }
-
-        .category-devops {
-            border: 3px solid #95A5A6;
-            background-color: #f8f9fa;
+            .tech-stack-item:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 4px 12px rgba(13, 110, 253, 0.15);
+                border-color: #0d6efd;
+            }
         }
     </style>
 </head>
 
 <body>
 <div class="resume">
-    <header style="text-align: center;">
-        <h1 style="margin-bottom: 10px;">유승민</h1>
-        <p style="font-size: 1.3em; color: #495057; margin: 10px 0;">데이터 분석 & LLM 개발자</p>
-        <p style="margin: 10px 0;">
-            <a href="mailto:2win0min@naver.com">2win0min@naver.com</a> |
-            <a href="tel:010-5958-0369">010-5958-0369</a> |
+    <header>
+        <h1>유승민</h1>
+        <p class="header-subtitle">데이터 분석 & LLM 개발자</p>
+        <div class="header-contact">
+            <a href="mailto:2win0min@naver.com">2win0min@naver.com</a>
+            <span class="contact-divider">|</span>
+            <a href="tel:010-5958-0369">010-5958-0369</a>
+            <span class="contact-divider">|</span>
             <a href="https://github.com/yooseungmin9">Github Link</a>
-        </p>
+        </div>
     </header>
+
     <section id="profile">
         <h2>소개</h2>
         <p class="profile-text">
             저는 AI 기술로 실질적인 비즈니스 가치를 창출하는 개발자입니다.<br>
             <br>
-            <strong>RAG 기반 경제 챗봇 시스템</strong>에서 GPT Function Calling을 활용한 동적 쿼리 처리, Vector Store 기반 문서 검색, 실시간 경제
-            API 통합을 주도했습니다.
+            <strong>RAG 기반 경제 챗봇 시스템</strong>에서 GPT Function Calling을 활용한 동적 쿼리 처리, Vector Store 기반 문서 검색, 실시간 경제 API 통합을 주도했습니다.
             STT/TTS 음성 인터페이스 개발을 통해 접근성을 확대하며, 단순 모델 구현을 넘어 사용자가 실제로 활용할 수 있는 실용적인 AI 솔루션을 구현했습니다.<br>
             <br>
             데이터 수집-전처리-분석-시각화-웹서비스 구현까지 전체 파이프라인을 경험하며, LLM 기술과 데이터 분석을 결합한 지능형 솔루션 개발을 통해
@@ -369,13 +531,11 @@
         <h2>기술 스택</h2>
         <div class="skills-grid">
             <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                     alt="Python">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
                 <p>Python</p>
             </div>
             <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
-                     alt="FastAPI">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI">
                 <p>FastAPI</p>
             </div>
             <div class="skill-item">
@@ -383,23 +543,19 @@
                 <p>Java</p>
             </div>
             <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
-                     alt="Spring Boot">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">
                 <p>Spring Boot</p>
             </div>
             <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/thymeleaf/thymeleaf-original.svg"
-                     alt="Thymeleaf">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/thymeleaf/thymeleaf-original.svg" alt="Thymeleaf">
                 <p>Thymeleaf</p>
             </div>
             <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg"
-                     alt="Oracle">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle">
                 <p>Oracle</p>
             </div>
             <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
-                     alt="MongoDB">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
                 <p>MongoDB</p>
             </div>
             <div class="skill-item">
@@ -423,8 +579,7 @@
                 <p>Transformers</p>
             </div>
             <div class="skill-item">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"
-                     alt="Scikit-learn">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn">
                 <p>Scikit-learn</p>
             </div>
             <div class="skill-item">
@@ -432,18 +587,15 @@
                 <p>TensorFlow</p>
             </div>
             <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
-                     alt="PyTorch">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch">
                 <p>PyTorch</p>
             </div>
             <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg"
-                     alt="Jupyter">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter">
                 <p>Jupyter</p>
             </div>
             <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
-                     alt="Pandas">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
                 <p>Pandas</p>
             </div>
             <div class="skill-item">
@@ -500,20 +652,20 @@
 
             <p><strong>프로젝트 개요</strong></p>
             <p>
-                경제 뉴스를 효율적으로 분석하고 핵심 이슈와 감성 흐름을 한눈에 파악할 수 있는 AI 기반 플랫폼입니다.<br>
+                경제 뉴스를 효율적으로 분석하고 핵심 이슈와 감성 흐름을 한눈에 파악할 수 있는 AI 기반 플랫폼입니다.
                 GPT-5와 RAG 기술을 결합하여 실시간 경제 질의응답이 가능한 챗봇을 구현했습니다.
             </p>
 
-            <p><strong>시연 영상 및 GitHub</strong><br>
-                챗봇 부분) fast_api 폴더 내 chatbot 폴더</p>
-            <p>
-                <a href="https://www.youtube.com/watch?v=Bk_dYeuUDCE" target="_blank"><img src="img/youtube.png"
-                                                                                           alt="YouTube" style="width: 36px; height: 24px; vertical-align: middle;"></a>
-                <a href="https://github.com/yooseungmin9/dgict-teamb" target="_blank"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                        alt="GitHub"
-                        style="width: 36px; height: 36px; vertical-align: middle; margin-left: 10px;"></a>
-            </p>
+            <p><strong>시연 영상 및 GitHub</strong></p>
+            <p>챗봇 부분) fast_api 폴더 내 chatbot 폴더</p>
+            <div class="link-group">
+                <a href="https://www.youtube.com/watch?v=Bk_dYeuUDCE" target="_blank">
+                    <img src="img/youtube.png" alt="YouTube" style="width: 36px; height: 24px;">
+                </a>
+                <a href="https://github.com/yooseungmin9/dgict-teamb" target="_blank">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="width: 36px; height: 36px;">
+                </a>
+            </div>
 
             <p><strong>주요 담당 업무 (5인 프로젝트)</strong></p>
             <ul>
@@ -573,8 +725,7 @@
 
             <p><strong>핵심 기술 구현</strong></p>
             <ul>
-                <li><strong>Function Calling 구조:</strong> get_latest_news(), get_market(), search_docs() 등 함수를 통해
-                    실시간 데이터 조회</li>
+                <li><strong>Function Calling 구조:</strong> get_latest_news(), get_market(), search_docs() 등 함수를 통해 실시간 데이터 조회</li>
                 <li><strong>RAG 시스템:</strong> watcher.py를 통한 문서 자동 감시 및 Vector Store 실시간 갱신</li>
                 <li><strong>API 엔드포인트:</strong> /chat, /tts, /stt, /rag/docs 등 REST API 설계</li>
             </ul>
@@ -587,34 +738,32 @@
                 <li>FastAPI + Spring Boot 이중 서버 아키텍처 설계 및 <strong>5인 팀 프로젝트 총괄</strong></li>
             </ul>
         </div>
-    </section>
 
-    <section>
         <div class="project">
             <div class="project-header">
                 <h3>고객 등급 예측 모델</h3>
-                <span class="project-date">2025.09 - 2025.9</span>
+                <span class="project-date">2025.09 - 2025.09</span>
             </div>
 
             <span class="project-role">머신러닝 프로젝트</span>
 
             <p><strong>프로젝트 개요</strong></p>
             <p>
-                Scikit-learn을 활용한 머신러닝(비지도) 클러스터링을 수행하고 서비스 모델 및 애플리케이션을 구현하였습니다.<br>
+                Scikit-learn을 활용한 머신러닝(비지도) 클러스터링을 수행하고 서비스 모델 및 애플리케이션을 구현하였습니다.
                 데이터 전처리 및 분석 후 Matplotlib을 통해 시각화하여 클러스터 특성을 파악하고 비즈니스 인사이트를 도출하였습니다.
             </p>
 
             <p><strong>어플 링크 및 Docs</strong></p>
-            <p>
-                <a href="https://customer1.streamlit.app/" target="_blank">고객 등급 예측 어플</a> ( Streamlit App 사용 )
-                <a href="https://github.com/yooseungmin9/customer-grade" target="_blank"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                        alt="GitHub"
-                        style="width: 36px; height: 36px; vertical-align: middle; margin-left: 10px;"></a><br>
-            <p>
-                <iframe src="img/고객등급예측.pdf" width="100%" height="600px"></iframe>
-            </p>
-            </p>
+            <div class="link-group">
+                <a href="https://customer1.streamlit.app/" target="_blank">고객 등급 예측 어플</a>
+                <a href="https://github.com/yooseungmin9/customer-grade" target="_blank">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="width: 36px; height: 36px;">
+                </a>
+            </div>
+
+            <div class="pdf-container">
+                <iframe src="img/고객등급예측.pdf"></iframe>
+            </div>
 
             <p style="margin-top: 20px;"><strong>프로젝트 성과</strong></p>
             <ul>
@@ -623,17 +772,12 @@
                 <li>Matplotlib을 활용한 클러스터 분포 <strong>시각화</strong> 및 각 클러스터별 특성 분석을 통해 <strong>인사이트 도출</strong></li>
                 <li>머신러닝 클러스터링 모델을 기반으로 한 예측 서비스 <strong>애플리케이션 구현</strong> (Streamlit 활용)</li>
             </ul>
-
         </div>
-    </section>
-
     </section>
 
     <section>
         <h2>토이 프로젝트</h2>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-
+        <div class="project-grid">
             <div class="project">
                 <div class="project-header">
                     <h3>단어장 어플</h3>
@@ -645,13 +789,12 @@
                 <p>매일매일 학습을 위한 영어/일본어 단어장입니다.</p>
 
                 <p><strong>링크</strong></p>
-                <p>
-                    <a href="https://smartvocab.streamlit.app/" target="_blank">단어장 어플</a> ( Streamlit App 사용 )
-                    <a href="https://github.com/yooseungmin9/smart-vocab" target="_blank"><img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                            alt="GitHub"
-                            style="width: 36px; height: 36px; vertical-align: middle; margin-left: 10px;"></a>
-                </p>
+                <div class="link-group">
+                    <a href="https://smartvocab.streamlit.app/" target="_blank">단어장 어플</a>
+                    <a href="https://github.com/yooseungmin9/smart-vocab" target="_blank">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="width: 36px; height: 36px;">
+                    </a>
+                </div>
 
                 <p style="margin-top: 20px;"><strong>프로젝트 성과</strong></p>
                 <ul>
@@ -672,13 +815,12 @@
                 <p>실시간으로 교통량을 시각화하는 대시보드입니다.</p>
 
                 <p><strong>링크</strong></p>
-                <p>
-                    <a href="https://mintapp.streamlit.app/" target="_blank">대전 교통정보 어플</a> ( Streamlit App 사용 )
-                    <a href="https://github.com/yooseungmin9/mint-app" target="_blank"><img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                            alt="GitHub"
-                            style="width: 36px; height: 36px; vertical-align: middle; margin-left: 10px;"></a>
-                </p>
+                <div class="link-group">
+                    <a href="https://mintapp.streamlit.app/" target="_blank">대전 교통정보 어플</a>
+                    <a href="https://github.com/yooseungmin9/mint-app" target="_blank">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="width: 36px; height: 36px;">
+                    </a>
+                </div>
 
                 <p style="margin-top: 20px;"><strong>프로젝트 성과</strong></p>
                 <ul>
@@ -687,7 +829,6 @@
                     <li>Folium 라이브러리 활용, 지도 데이터 시각화</li>
                 </ul>
             </div>
-
         </div>
     </section>
 
@@ -717,4 +858,3 @@
 </div>
 </body>
 </html>
-
