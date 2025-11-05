@@ -21,6 +21,39 @@
             height: 100%;
         }
 
+        /* ========== 다크모드 CSS 변수 ========== */
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: rgba(255, 255, 255, 0.7);
+            --bg-tertiary: rgba(255, 255, 255, 0.01);
+            --text-primary: #000000;
+            --text-secondary: #696969;
+            --accent-color: rgb(13, 110, 253);
+            --border-color: rgba(255, 255, 255, 0);
+            --border-light: rgba(255, 255, 255, 0.9);
+            --shadow-color: rgba(0, 0, 0, 0);
+            --shadow-accent: rgba(13, 110, 253, 0.3);
+            --divider-color: rgb(0, 0, 0);
+            --skill-hover-bg: rgba(255, 255, 255, 0);
+            --skill-hover-border: rgba(255, 255, 255, 0);
+        }
+
+        html[data-theme="dark"] {
+            --bg-primary: #ffffff;
+            --bg-secondary: rgba(26, 26, 46, 0.8);
+            --bg-tertiary: rgba(255, 255, 255, 0);
+            --text-primary: #e8e8e8;
+            --text-secondary: #b0b0b0;
+            --accent-color: rgb(13, 110, 253);
+            --border-color: rgba(255, 255, 255, 0);
+            --border-light: rgba(255, 255, 255, 0);
+            --shadow-color: rgba(0, 0, 0, 0);
+            --shadow-accent: rgba(13, 110, 253, 0.3);
+            --divider-color: rgba(255, 255, 255, 0.3);
+            --skill-hover-bg: rgba(100, 180, 255, 0);
+            --skill-hover-border: rgba(255, 255, 255, 0);
+        }
+
         /* ========== 배경 및 기본 스타일 ========== */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -28,8 +61,13 @@
             margin: 0;
             padding: 0;
             min-height: 100vh;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            position: relative;
+        }
 
-            background-color: #ffffff;
+        html[data-theme="light"] body {
             background-image:
                     radial-gradient(ellipse 1000px 800px at 50% 50%,
                     rgba(200,220,255,0.05) 0%,
@@ -47,8 +85,11 @@
             background-attachment: fixed;
             background-repeat: no-repeat;
             background-size: cover;
+        }
 
-            position: relative;
+        html[data-theme="dark"] body {
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
+            background-attachment: fixed;
         }
 
         body::before {
@@ -58,6 +99,7 @@
             left: 0;
             width: 100%;
             height: 100%;
+            background: inherit;
             pointer-events: none;
             z-index: -1;
         }
@@ -66,39 +108,78 @@
             max-width: 900px;
             margin: 20px auto;
             padding: 30px;
-            background: rgba(255, 255, 255, 0);
-            backdrop-filter: blur(30px);
+            background: var(--bg-secondary);
+            backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(30px);
             border-radius: 28px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0),
-            inset 0 1px 1px rgb(255, 255, 255);
+            border: 2px solid var(--border-light);
+            box-shadow: 0 8px 32px var(--shadow-color),
+            inset 0 1px 1px rgba(255, 255, 255, 0.3),
+            inset 0 -1px 2px rgba(255, 255, 255, 0);
             position: relative;
+            transition: all 0.3s ease;
+        }
+
+        /* ========== 다크모드 토글 ========== */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .toggle-btn {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 4px 15px var(--shadow-color);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .toggle-btn:hover {
+            transform: scale(1.1) rotate(20deg);
+            box-shadow: 0 8px 25px var(--shadow-accent);
+            border-color: var(--accent-color);
+        }
+
+        .toggle-btn:active {
+            transform: scale(0.95);
         }
 
         /* ========== HEADER ========== */
         header {
             text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 20px;
             margin-bottom: 30px;
         }
 
         header h1 {
             font-size: 1.8rem;
-            color: #000000;
+            color: var(--text-primary);
             margin-bottom: 10px;
             font-weight: 700;
             word-break: break-word;
             letter-spacing: -0.5px;
+            transition: color 0.3s ease;
         }
 
         .header-subtitle {
             font-size: 1.1rem;
-            color: #0d6efd;
+            color: var(--accent-color);
             margin: 10px 0;
             word-break: break-word;
             font-weight: 500;
+            transition: color 0.3s ease;
         }
 
         .header-contact {
@@ -111,16 +192,16 @@
         }
 
         header a {
-            color: #000000;
+            color: var(--text-primary);
             text-decoration: none;
             padding: 8px 0;
             display: inline-block;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
             font-weight: 500;
         }
 
         header a:hover {
-            color: #0d6efd;
+            color: var(--accent-color);
             transform: translateY(-1px);
         }
 
@@ -130,7 +211,7 @@
         }
 
         .contact-divider {
-            color: rgb(0, 0, 0);
+            color: var(--divider-color);
             margin: 0 4px;
             display: inline;
         }
@@ -142,27 +223,29 @@
 
         h2 {
             font-size: 1.5rem;
-            color: #000000;
-            border-bottom: 2px solid rgb(13, 110, 253);
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--accent-color);
             padding-bottom: 12px;
             margin-bottom: 20px;
             font-weight: 600;
             word-break: break-word;
             letter-spacing: -0.3px;
+            transition: all 0.3s ease;
         }
 
         h3 {
             font-size: 1.2rem;
-            color: #000000;
+            color: var(--text-primary);
             margin-bottom: 12px;
             font-weight: 600;
             word-break: break-word;
+            transition: color 0.3s ease;
         }
 
         .profile-text {
             font-size: 0.95rem;
             line-height: 1.8;
-            color: #000000;
+            color: var(--text-primary);
         }
 
         /* ========== SKILLS GRID (Liquid Glass 스타일) ========== */
@@ -176,13 +259,14 @@
         .skill-item {
             text-align: center;
             padding: 15px 10px;
-            background: rgba(255, 255, 255, 0.01);
+            background: var(--bg-tertiary);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-radius: 18px;
-            border: 1px solid rgba(255, 255, 255, 0);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0),
-            inset 0 1px 1px rgb(255, 255, 255);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px var(--shadow-color),
+            inset 0 1px 1px rgba(255, 255, 255, 0.3),
+            inset 0 -1px 2px rgba(255, 255, 255, 0);
             transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
             min-height: 110px;
             display: flex;
@@ -192,11 +276,12 @@
         }
 
         .skill-item:hover {
-            background: rgba(255, 255, 255, 0);
-            border-color: rgba(255, 255, 255, 0.35);
+            background: var(--skill-hover-bg);
+            border-color: var(--skill-hover-border);
             transform: translateY(-1px);
-            box-shadow: 0 12px 40px rgba(13, 110, 253, 0.3),
-            inset 0 1px 1px rgb(255, 255, 255);
+            box-shadow: 0 12px 40px var(--shadow-accent),
+            inset 0 1px 1px rgb(255, 255, 255, 0.3),
+            inset 0 -1px 2px rgba(255, 255, 255, 0);
         }
 
         .skill-item img {
@@ -204,45 +289,42 @@
             height: 45px;
             margin-bottom: 8px;
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0));
+            transition: filter 0.3s ease;
+        }
+
+        html[data-theme="dark"] .skill-item img {
+            filter: brightness(0.9) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         }
 
         .skill-item p {
             font-size: 0.85rem;
-            color: #000000;
+            color: var(--text-primary);
             font-weight: 500;
             word-break: break-word;
-
-        }
-
-        #skills2 .skill-item {
-            background: rgba(255, 255, 255, 0.01);
-        }
-
-        #skills2 .skill-item:hover {
-            background: rgba(255, 255, 255, 0);
-            border-color: rgba(255, 255, 255, 0.35);
         }
 
         /* ========== PROJECTS (Liquid Glass 스타일) ========== */
         .project {
             margin-bottom: 25px;
             padding: 20px 15px;
-            background: rgba(255, 255, 255, 0.01);
+            background: var(--bg-tertiary);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0),
-            inset 0 1px 1px rgb(255, 255, 255);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px var(--shadow-color),
+            inset 0 1px 1px rgb(255, 255, 255, 0.3),
+            inset 0 -1px 2px rgba(255, 255, 255, 0);
             transition: all 0.3s ease;
         }
 
         .project:hover {
-            background: rgba(255, 255, 255, 0);
-            border-color: rgba(255, 255, 255, 0.35);
+            background: var(--skill-hover-bg);
+            border-color: var(--skill-hover-border);
             transform: translateY(-1px);
-            box-shadow: 0 12px 40px rgba(13, 110, 253, 0.3),
-            inset 0 1px 1px rgb(255, 255, 255);
+            box-shadow: 0 12px 40px var(--shadow-accent),
+            inset 0 1px 1px rgb(255, 255, 255, 0.3),
+            inset 0 -1px 2px rgba(255, 255, 255, 0);
         }
 
         .project-header {
@@ -257,14 +339,15 @@
         }
 
         .project-date {
-            color: rgb(0, 0, 0);
+            color: var(--text-secondary);
             font-size: 0.9rem;
             align-self: flex-start;
+            transition: color 0.3s ease;
         }
 
         .project-role {
-            background: rgb(13, 110, 253);
-            color: #ffffff;
+            background: var(--accent-color);
+            color: var(--bg-primary);
             padding: 6px 10px;
             border-radius: 6px;
             font-size: 0.85rem;
@@ -273,18 +356,19 @@
             word-break: break-word;
             border: 1px solid rgba(100, 200, 255, 0.3);
             font-weight: 500;
+            transition: all 0.3s ease;
         }
 
         .project p {
             margin: 10px 0;
             line-height: 1.6;
             font-size: 0.95rem;
-            color: #000000;
+            color: var(--text-primary);
         }
 
         .project strong {
             word-break: break-word;
-            color: #000000;
+            color: var(--text-primary);
         }
 
         .project ul {
@@ -296,7 +380,7 @@
             margin-bottom: 8px;
             line-height: 1.6;
             font-size: 0.95rem;
-            color: #000000;
+            color: var(--text-primary);
         }
 
         .project-grid {
@@ -312,44 +396,47 @@
         }
 
         .flow-step {
-            background: rgba(255, 255, 255, 0);
+            background: var(--skill-hover-bg);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.35);
+            border: 1px solid var(--skill-hover-border);
             border-radius: 14px;
             padding: 15px;
             margin-bottom: 10px;
             font-size: 0.9rem;
             transform: translateY(-1px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0),
-            inset 0 1px 1px rgb(255, 255, 255);
+            box-shadow: 0 12px 40px var(--shadow-color),
+            inset 0 1px 1px rgb(255, 255, 255, 0.3),
+            inset 0 -1px 2px rgba(255, 255, 255, 0);
+            transition: all 0.3s ease;
         }
 
         .flow-step:hover {
-            background: rgba(255, 255, 255, 0);
-            border-color: rgba(255, 255, 255, 0.35);
+            background: var(--skill-hover-bg);
+            border-color: var(--skill-hover-border);
             transform: translateY(-1px);
-            box-shadow: 0 12px 40px rgba(13, 110, 253, 0.3),
-            inset 0 1px 1px rgb(255, 255, 255);
+            box-shadow: 0 12px 40px var(--shadow-accent),
+            inset 0 1px 1px rgb(255, 255, 255, 0.3),
+            inset 0 -1px 2px rgba(255, 255, 255, 0);
         }
 
         .flow-step-title {
             font-size: 1rem;
             font-weight: 600;
-            color: #0d6efd;
+            color: var(--accent-color);
             margin-bottom: 8px;
         }
 
         .flow-step-content {
             font-size: 0.9rem;
-            color: #000000;
+            color: var(--text-primary);
             line-height: 1.5;
         }
 
         .flow-arrow {
             text-align: center;
             font-size: 1.2rem;
-            color: rgb(0, 0, 0);
+            color: var(--divider-color);
             margin: 8px 0;
             line-height: 1;
         }
@@ -368,13 +455,13 @@
             display: inline-flex;
             align-items: center;
             transition: all 0.3s ease;
-            color: #000000;
+            color: var(--text-primary);
             text-decoration: none;
             font-weight: 500;
         }
 
         .link-group a:hover {
-            color: #0d6efd;
+            color: var(--accent-color);
             transform: translateY(-1px);
         }
 
@@ -385,6 +472,11 @@
         .link-group a img {
             vertical-align: middle;
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0));
+            transition: filter 0.3s ease;
+        }
+
+        html[data-theme="dark"] .link-group a img {
+            filter: brightness(0.9) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         }
 
         /* ========== PDF ========== */
@@ -403,7 +495,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            border: 1px solid rgb(0, 0, 0);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
         }
 
@@ -416,9 +508,9 @@
         .education-list li,
         .experience-list li {
             padding: 12px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0);
+            border-bottom: 1px solid var(--border-color);
             font-size: 0.95rem;
-            color: #000000;
+            color: var(--text-primary);
         }
 
         .education-list li:last-child,
@@ -428,7 +520,7 @@
 
         .education-list li strong,
         .experience-list li strong {
-            color: #000000;
+            color: var(--text-primary);
         }
 
         /* ========== RESPONSIVE DESIGN ========== */
@@ -466,6 +558,11 @@
                 align-self: auto;
                 white-space: nowrap;
             }
+
+            .theme-toggle {
+                top: 30px;
+                right: 30px;
+            }
         }
 
         /* 태블릿 레이아웃 (481px - 768px) */
@@ -497,6 +594,11 @@
 
             .project-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .theme-toggle {
+                top: 20px;
+                right: 20px;
             }
         }
 
@@ -598,11 +700,30 @@
             .project-grid {
                 grid-template-columns: 1fr;
             }
+
+            .toggle-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+
+            .theme-toggle {
+                top: 15px;
+                right: 15px;
+            }
+        }
+        html[data-theme="dark"] img[alt="GitHub"] {
+            content: url('img/github-white-icon.svg');
         }
     </style>
 </head>
 
 <body>
+<!-- 다크모드 토글 버튼 -->
+<div class="theme-toggle">
+    <button class="toggle-btn" id="themeToggle" title="다크모드 토글">🌙</button>
+</div>
+
 <div class="resume">
     <header>
         <h1>유승민</h1>
@@ -619,12 +740,12 @@
     <section id="profile">
         <h2>소개</h2>
         <p class="profile-text">
-            저는 AI 기술로 실질적인 <span style="color: #0d6efd; font-weight: bold;">비즈니스 가치를 창출</span>하는 개발자입니다.<br>
+            저는 AI 기술로 실질적인 <span style="color: var(--accent-color); font-weight: bold;">비즈니스 가치를 창출</span>하는 개발자입니다.<br>
             <br>
-            <span style="color: #0d6efd; font-weight: bold;">RAG 기반 경제 챗봇</span>에서 GPT Function Calling을 활용한 동적 쿼리 처리, Vector Store 기반 문서 검색, 실시간 경제 API 통합을 주도했습니다.
+            <span style="color: var(--accent-color); font-weight: bold;">RAG 기반 경제 챗봇</span>에서 GPT Function Calling을 활용한 동적 쿼리 처리, Vector Store 기반 문서 검색, 실시간 경제 API 통합을 주도했습니다.
             STT/TTS 음성 인터페이스 개발을 통해 접근성을 확대하며, 단순 모델 구현을 넘어 사용자가 실제로 활용할 수 있는 실용적인 AI 솔루션을 구현했습니다.<br>
             <br>
-            데이터 수집 - 전처리 - 분석 - 시각화 - 웹서비스 구현까지 전체 파이프라인을 경험하였고, <span style="color: #0d6efd; font-weight: bold;">데이터 분석</span>과 <span style="color: #0d6efd; font-weight: bold;">LLM 기술</span>을 결합한 지능형 솔루션 개발을 통해
+            데이터 수집 - 전처리 - 분석 - 시각화 - 웹서비스 구현까지 전체 파이프라인을 경험하였고, <span style="color: var(--accent-color); font-weight: bold;">데이터 분석</span>과 <span style="color: var(--accent-color); font-weight: bold;">LLM 기술</span>을 결합한 지능형 솔루션 개발을 통해
             비즈니스 인사이트 발굴과 고객 맞춤형 최적화에 기여하는 AI 개발자로 성장하겠습니다.
         </p>
     </section>
@@ -864,7 +985,7 @@
             </div>
 
             <div class="pdf-container">
-                <iframe src="img/고객등급예측.pdf"></iframe>
+                <iframe src="img/고객등급예측.pdf"></iframe>
             </div>
 
             <p style="margin-top: 20px;"><strong>프로젝트 성과</strong></p>
@@ -939,7 +1060,7 @@
         <ul class="experience-list">
             <li>
                 <strong>대한민국 육군</strong> 하사<br>
-                <span style="color: #696969;">2021.02 ~ 2023.2 (만기 전역)</span>
+                <span style="color: var(--text-secondary);">2021.02 ~ 2023.2 (만기 전역)</span>
             </li>
         </ul>
     </section>
@@ -949,14 +1070,58 @@
         <ul class="education-list">
             <li>
                 <strong>한양사이버대학교</strong> 컴퓨터공학과<br>
-                <span style="color: #696969;">2025.03 ~ 현재 (휴학 중)</span>
+                <span style="color: var(--text-secondary);">2025.03 ~ 현재 (휴학 중)</span>
             </li>
             <li>
                 <strong>대구일마이스터고등학교</strong> 생산자동화과<br>
-                <span style="color: #696969;">2018.03 ~ 2021.01 (졸업)</span>
+                <span style="color: var(--text-secondary);">2018.03 ~ 2021.01 (졸업)</span>
             </li>
         </ul>
     </section>
 </div>
+
+<script>
+    // 다크모드 토글 기능
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    // 저장된 테마 불러오기
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    // 토글 버튼 클릭 이벤트
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    });
+
+    // 아이콘 업데이트 함수
+    function updateThemeIcon(theme) {
+        themeToggle.textContent = theme === 'light' ? '🌙' : '☀️';
+        themeToggle.style.transition = 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
+    }
+
+    // 시스템 다크모드 설정 감지
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        if (!localStorage.getItem('theme')) {
+            html.setAttribute('data-theme', 'dark');
+            updateThemeIcon('dark');
+        }
+    }
+
+    // 시스템 설정 변경 감지
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if (!localStorage.getItem('theme')) {
+            const newTheme = e.matches ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            updateThemeIcon(newTheme);
+        }
+    });
+</script>
 </body>
 </html>
