@@ -270,7 +270,7 @@
             color: var(--text-primary);
         }
 
-        /* ========== SKILLS GRID (Liquid Glass 스타일) ========== */
+        /* ========== SKILLS GRID ========== */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -280,6 +280,7 @@
 
         .skill-item {
             text-align: center;
+            position: relative;
             padding: 15px 10px;
             background: var(--bg-tertiary);
             backdrop-filter: blur(20px);
@@ -328,6 +329,79 @@
             color: var(--text-primary);
             font-weight: 500;
             word-break: break-word;
+        }
+
+        .skills-header h2 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .skill-legend {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        .skill-legend-container {
+            display: flex;
+            align-items: center;
+            margin-top: -20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .legend-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        .legend-dot.expert {
+            background-color: #2563eb;
+        }
+
+        .legend-dot.advanced {
+            background-color: #16a34a;
+        }
+
+        .legend-dot.intermediate {
+            background-color: #6b7280;
+        }
+
+        .legend-text {
+            font-size: 13px;
+            white-space: nowrap;
+        }
+
+        .notification-dot {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: 2px solid var(--bg-tertiary);
+            box-sizing: border-box;
+            flex-shrink: 0;
+        }
+
+        .notification-dot.expert {
+            background-color: #2563eb;
+        }
+
+        .notification-dot.advanced {
+            background-color: #16a34a;
+        }
+
+        .notification-dot.beginner {
+            background-color: #6b7280;
         }
 
         /* ========== PROJECTS (Liquid Glass 스타일) ========== */
@@ -721,6 +795,19 @@
                 font-size: 0.75rem;
             }
 
+            .skills-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .skill-legend {
+                gap: 12px;
+            }
+
+            .legend-text {
+                font-size: 12px;
+            }
+
             .project {
                 padding: 15px;
                 margin-bottom: 20px;
@@ -801,86 +888,123 @@
     </section>
 
     <section id="skills">
-        <h2>기술 스택</h2>
+        <h2>기술스택
+            <div class="skill-legend-container">
+                <div class="skill-legend">
+                    <div class="legend-item">
+                        <span class="legend-dot expert"></span>
+                        <span class="legend-text">Expert</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot advanced"></span>
+                        <span class="legend-text">Advanced</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot intermediate"></span>
+                        <span class="legend-text">Beginner</span>
+                    </div>
+                </div>
+            </div>
+        </h2>
         <div class="skills-grid">
             <div class="skill-item">
+                <span class="notification-dot expert"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
                 <p>Python</p>
             </div>
             <div class="skill-item">
+                <span class="notification-dot expert"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI">
                 <p>FastAPI</p>
             </div>
             <div class="skill-item">
+                <span class="notification-dot advanced"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
                 <p>Java</p>
             </div>
             <div class="skill-item">
+                <span class="notification-dot advanced"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">
                 <p>Spring Boot</p>
             </div>
             <div class="skill-item">
+                <span class="notification-dot advanced"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/thymeleaf/thymeleaf-original.svg" alt="Thymeleaf">
                 <p>Thymeleaf</p>
             </div>
             <div class="skill-item">
+                <span class="notification-dot advanced"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle">
                 <p>Oracle</p>
             </div>
             <div class="skill-item">
+                <span class="notification-dot expert"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
                 <p>MongoDB</p>
             </div>
             <div class="skill-item">
+                <span class="notification-dot advanced"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
                 <p>MySQL</p>
             </div>
             <div class="skill-item">
+                <span class="notification-dot advanced"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud">
                 <p>Google Cloud</p>
             </div>
             <div class="skill-item">
+                <span class="notification-dot advanced"></span>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Google Colab">
                 <p>Google Colab</p>
             </div>
             <div class="skill-item">
+                <span class="notification-dot expert"></span>
                 <img src="img/openai.png" alt="OpenAI" class="logo-light">
                 <img src="img/openai-white.png" alt="OpenAI" class="logo-dark">
                 <p>OpenAI API</p>
             </div>
             <div class="skill-item">
+                <span class="notification-dot advanced"></span>
                 <img src="https://huggingface.co/front/assets/huggingface_logo.svg" alt="Transformers">
                 <p>Transformers</p>
             </div>
             <div class="skill-item">
+                <span class="notification-dot beginner"></span>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn">
                 <p>Scikit-learn</p>
             </div>
             <div class="skill-item">
+                <span class="notification-dot beginner"></span>
                 <img src="img/TensorFlow.svg" alt="TensorFlow">
                 <p>TensorFlow</p>
             </div>
             <div class="skill-item">
+                <span class="notification-dot beginner"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch">
                 <p>PyTorch</p>
             </div>
             <div class="skill-item">
+                <span class="notification-dot expert"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter">
                 <p>Jupyter</p>
             </div>
             <div class="skill-item">
+                <span class="notification-dot expert"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
                 <p>Pandas</p>
             </div>
             <div class="skill-item">
+                <span class="notification-dot expert"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="Numpy">
                 <p>Numpy</p>
             </div>
             <div class="skill-item">
+                <span class="notification-dot expert"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib">
                 <p>Matplotlib</p>
             </div>
             <div class="skill-item">
+                <span class="notification-dot expert"></span>
                 <img src="img/seaborn.svg" alt="Seaborn">
                 <p>Seaborn</p>
             </div>
@@ -1186,4 +1310,3 @@
 </script>
 </body>
 </html>
-
