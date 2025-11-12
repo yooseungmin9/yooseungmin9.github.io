@@ -37,9 +37,9 @@
             --skill-hover-bg: rgba(255, 0, 0, 0);
             --skill-hover-border: rgba(255, 0, 0, 0);
             --inset-shadow-light: inset 0 1px 2px rgb(255, 255, 255),
-                                inset 0 -1px 3px rgba(0, 0, 0, 0);
+            inset 0 -1px 3px rgba(0, 0, 0, 0);
             --inset-shadow-dark: inset 0 1px 2px rgb(255, 255, 255),
-                                inset 0 -1px 3px rgba(0, 0, 0, 0);
+            inset 0 -1px 3px rgba(0, 0, 0, 0);
         }
 
         html[data-theme="dark"] {
@@ -57,9 +57,9 @@
             --skill-hover-bg: rgba(100, 180, 255, 0);
             --skill-hover-border: rgba(255, 255, 255, 0);
             --inset-shadow-light: inset 0 1px 2px rgba(255, 255, 255, 0.5),
-                                inset 0 -1px 3px rgba(0, 0, 0, 0);
+            inset 0 -1px 3px rgba(0, 0, 0, 0);
             --inset-shadow-dark: inset 0 1px 2px rgba(255, 255, 255, 0.5),
-                                inset 0 -1px 3px rgba(0, 0, 0, 0);
+            inset 0 -1px 3px rgba(0, 0, 0, 0);
         }
 
         /* ========== 배경 및 기본 스타일 ========== */
@@ -548,6 +548,31 @@
             color: var(--text-primary);
         }
 
+        /* Accordion 스타일 추가 */
+        details summary span:first-child {
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary span:first-child {
+            transform: rotate(90deg);
+        }
+
+        details summary {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        details summary:hover {
+            background: var(--skill-hover-bg);
+            border-color: var(--skill-hover-border);
+        }
+
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
         /* ========== RESPONSIVE DESIGN ========== */
 
         /* 데스크톱 레이아웃 (769px 이상) */
@@ -819,9 +844,9 @@
                 <p>Google Colab</p>
             </div>
             <div class="skill-item">
-                    <img src="img/openai.png" alt="OpenAI" class="logo-light">
-                    <img src="img/openai-white.png" alt="OpenAI" class="logo-dark">
-                    <p>OpenAI API</p>
+                <img src="img/openai.png" alt="OpenAI" class="logo-light">
+                <img src="img/openai-white.png" alt="OpenAI" class="logo-dark">
+                <p>OpenAI API</p>
             </div>
             <div class="skill-item">
                 <img src="https://huggingface.co/front/assets/huggingface_logo.svg" alt="Transformers">
@@ -993,9 +1018,7 @@
                 <h3>고객 등급 예측 모델</h3>
                 <span class="project-date">2025.09 - 2025.09</span>
             </div>
-
             <span class="project-role">머신러닝 프로젝트</span>
-
             <p><strong>프로젝트 개요</strong></p>
             <p>
                 Scikit-learn을 활용한 머신러닝(비지도) 클러스터링을 수행하고 서비스 모델 및 애플리케이션을 구현하였습니다.
@@ -1003,21 +1026,30 @@
             </p>
 
             <p><strong>링크 및 Docs</strong></p>
-            <div class="link-group">
+            <div class="link-group" style="margin-bottom: 0px;">
                 <a href="https://customer1.streamlit.app/" target="_blank">고객 등급 예측 어플</a>
                 <a href="https://github.com/yooseungmin9/customer-grade" target="_blank">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="width: 36px; height: 36px;">
                 </a>
             </div>
 
-            <div class="pdf-container">
-                <iframe src="https://yooseungmin9.github.io/img/customer.pdf"
-                        width="100%"
-                        height="600px">
-                </iframe>
-            </div>
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; padding: 10px; background: var(--bg-tertiary); border-radius: 8px; list-style: none; display: flex; align-items: center; gap: 5px;">
+                    <span style="display: inline-block; transition: transform 0.3s ease;">▶</span>
+                    <span>Docs 보기</span>
+                </summary>
+                <div style="margin-top: 10px;">
+                    <div class="pdf-container">
+                        <iframe src="https://yooseungmin9.github.io/img/customer.pdf"
+                                width="100%"
+                                height="600px">
+                        </iframe>
+                    </div>
+                </div>
+            </details>
 
-            <p style="margin-top: 20px;"><strong>프로젝트 성과</strong></p>
+            <p style="margin-top: 10px;"><strong>프로젝트 성과</strong></p>
+
             <ul>
                 <li>CSV 데이터에 대한 결측치 처리, 이상치 제거, StandardScaler를 통한 정규화 등 <strong>전처리 파이프라인 구축</strong></li>
                 <li>Scikit-learn KMeans 알고리즘을 활용한 <strong>비지도 학습 클러스터링</strong> 구현</li>
@@ -1154,5 +1186,3 @@
 </script>
 </body>
 </html>
-
-
