@@ -216,7 +216,7 @@
             font-size: 1.8rem;
             color: var(--text-primary);
             margin-bottom: 10px;
-            font-weight: 700;
+            font-weight: 500;
             word-break: break-word;
             letter-spacing: -0.5px;
             transition: background-color 0.2s ease,
@@ -383,10 +383,21 @@
             font-size: 0.85rem;
             transition: color 0.5s ease;
         }
+        
+        .skills-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+        }
 
         .skills-header h2 {
             font-size: 1.333rem;
+            border-bottom: none;
             font-weight: bold;
+            margin-bottom: 0;
         }
 
         .skill-legend {
@@ -398,8 +409,9 @@
 
         .skill-legend-container {
             display: flex;
-            align-items: center;
-            margin-top: -20px;
+            justify-content: flex-end;
+            margin-top: -15px;
+            margin-bottom: 15px;
         }
 
         .legend-item {
@@ -430,6 +442,7 @@
 
         .legend-text {
             font-size: 0.889rem;
+            font-weight: 400;
         }
 
         .notification-dot {
@@ -1005,7 +1018,8 @@
     </section>
 
     <section id="skills">
-        <h2>기술스택
+        <div class="skills-header">
+            <h2>기술스택</h2>
             <div class="skill-legend-container">
                 <div class="skill-legend">
                     <div class="legend-item">
@@ -1022,7 +1036,7 @@
                     </div>
                 </div>
             </div>
-        </h2>
+        </div>
         <div class="skills-grid">
             <div class="skill-item">
                 <span class="notification-dot advanced"></span>
