@@ -160,7 +160,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 1.556rem;
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             box-shadow: 0 4px 15px var(--shadow-color);
             backdrop-filter: blur(10px);
@@ -209,6 +209,7 @@
             justify-content: center;
             gap: 8px;
             align-items: center;
+            font-size: 1.111rem;
         }
 
         header a {
@@ -263,7 +264,7 @@
         }
 
         .h4 {
-            font-size: 20px;
+            font-size: 1.111rem;
             margin: 10px 0;
             line-height: 1.6;
             color: var(--text-primary);
@@ -329,15 +330,13 @@
             filter: brightness(1) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         }
 
+        .project-role,
         .skill-item p {
             font-size: 0.85rem;
-            color: var(--text-primary);
-            font-weight: 500;
-            word-break: break-word;
         }
 
         .skills-header h2 {
-            font-size: 24px;
+            font-size: 1.333rem; /* 24px -> rem */
             font-weight: bold;
         }
 
@@ -381,7 +380,7 @@
         }
 
         .legend-text {
-            font-size: 16px;
+            font-size: 0.889rem; /* 16px -> rem */
         }
 
         .notification-dot {
@@ -454,7 +453,6 @@
             color: var(--bg-primary);
             padding: 6px 10px;
             border-radius: 6px;
-            font-size: 0.85rem;
             display: inline-block;
             gap: 10px;
             margin-bottom: 12px;
@@ -474,10 +472,14 @@
             padding-left: 20px;
         }
 
+        .p2,
+        .project li {
+            font-size: 0.95rem;
+        }
+
         .project li {
             margin-bottom: 8px;
             line-height: 1.6;
-            font-size: 0.95rem;
             color: var(--text-primary);
         }
 
@@ -606,7 +608,7 @@
         .experience-list li {
             padding: 12px 0;
             border-bottom: 1px solid var(--border-color);
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--text-primary);
         }
 
@@ -774,7 +776,7 @@
             }
 
             .h4 {
-                font-size: 18px;
+                font-size: 1.286rem;
                 margin: 10px 0;
                 line-height: 1.6;
                 color: var(--text-primary);
@@ -804,7 +806,7 @@
             }
 
             .legend-text {
-                font-size: 12px;
+                font-size: 0.857rem;
             }
 
             .project {
@@ -812,6 +814,8 @@
                 margin-bottom: 20px;
             }
 
+            /* 중복 통합: 모바일 본문 소체 0.9rem */
+            .p2,
             .project li {
                 font-size: 0.9rem;
             }
@@ -836,7 +840,7 @@
             .toggle-btn {
                 width: 50px;
                 height: 50px;
-                font-size: 24px;
+                font-size: 1.714rem;
             }
 
             .theme-toggle {
@@ -844,6 +848,7 @@
                 right: 15px;
             }
         }
+
         html[data-theme="dark"] img[alt="GitHub"] {
             content: url('img/github-white-icon.svg');
         }
@@ -1054,7 +1059,7 @@
             </div>
 
             <p class="h4"><strong>프로젝트 개요</strong></p>
-            <p>
+            <p class="p2">
                 경제 뉴스를 효율적으로 분석하고 핵심 이슈와 감성 흐름을 한눈에 파악할 수 있는 AI 기반 플랫폼입니다.
                 GPT-5와 RAG 기술을 결합하여 실시간 경제 질의응답이 가능한 챗봇을 구현했습니다.
             </p>
@@ -1147,7 +1152,7 @@
             </div>
 
             <p class="h4"><strong>프로젝트 개요</strong></p>
-            <p>
+            <p class="p2">
                 Scikit-learn을 활용한 머신러닝(비지도) 클러스터링을 수행하고 서비스 모델 및 애플리케이션을 구현하였습니다.
                 데이터 전처리 및 분석 후 Matplotlib을 통해 시각화하여 클러스터 특성을 파악하고 비즈니스 인사이트를 도출하였습니다.
             </p>
@@ -1198,7 +1203,7 @@
                 </div>
 
                 <p class="h4"><strong>프로젝트 개요</strong></p>
-                <p>매일매일 학습을 위한 영어/일본어 단어장입니다.</p>
+                <p class="p2">매일매일 학습을 위한 영어/일본어 단어장입니다.</p>
 
                 <p class="h4" style="margin-top: 20px;"><strong>프로젝트 성과</strong></p>
                 <ul>
@@ -1223,7 +1228,7 @@
                 </div>
 
                 <p class="h4"><strong>프로젝트 개요</strong></p>
-                <p>실시간으로 교통량을 시각화하는 대시보드입니다.</p>
+                <p class="p2">실시간으로 교통량을 시각화하는 대시보드입니다.</p>
 
                 <p class="h4" style="margin-top: 20px;"><strong>프로젝트 성과</strong></p>
                 <ul>
