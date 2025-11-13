@@ -262,6 +262,10 @@
             transition: color 0.3s ease;
         }
 
+        h4 {
+            font-size: 20px;
+        }
+
         .profile-text {
             font-size: 1rem;
             line-height: 1.8;
@@ -774,6 +778,10 @@
                 font-size: 1.1rem;
             }
 
+            h4 {
+                font-size: 16px
+            }
+
             .skills-grid {
                 grid-template-columns: repeat(3, 1fr);
                 gap: 10px;
@@ -1052,13 +1060,13 @@
 
             </div>
 
-            <p style="font-size: 20px"><strong>프로젝트 개요</strong></p>
+            <p class="h4"><strong>프로젝트 개요</strong></p>
             <p>
                 경제 뉴스를 효율적으로 분석하고 핵심 이슈와 감성 흐름을 한눈에 파악할 수 있는 AI 기반 플랫폼입니다.
                 GPT-5와 RAG 기술을 결합하여 실시간 경제 질의응답이 가능한 챗봇을 구현했습니다.
             </p>
 
-            <p style="font-size: 20px"><strong>주요 담당 업무 (5인 프로젝트)</strong></p>
+            <p class="h4"><strong>주요 담당 업무 (5인 프로젝트)</strong></p>
             <ul>
                 <li>전체 시스템 <strong>아키텍처 설계</strong> 및 FastAPI 기반 백엔드 <strong>서버 구축</strong></li>
                 <li>GPT-5 Function Calling을 활용한 <strong>AI 챗봇 개발</strong> (실시간 경제지표 조회, RAG 기반 문서 검색)</li>
@@ -1114,14 +1122,14 @@
                 </div>
             </div>
 
-            <p style="font-size: 20px"><strong>핵심 기술 구현</strong></p>
+            <p class="h4"><strong>핵심 기술 구현</strong></p>
             <ul>
                 <li><strong>Function Calling 구조:</strong> get_latest_news(), get_market(), search_docs() 등 함수를 통해 실시간 데이터 조회</li>
                 <li><strong>RAG 시스템:</strong> watcher.py를 통한 문서 자동 감시 및 Vector Store 실시간 갱신</li>
                 <li><strong>API 엔드포인트:</strong> /chat, /tts, /stt, /rag/docs 등 REST API 설계</li>
             </ul>
 
-            <p style="font-size: 20px; margin-top: 20px;"><strong>프로젝트 성과</strong></p>
+            <p class="h4" style=" margin-top: 20px;"><strong>프로젝트 성과</strong></p>
             <ul>
                 <li>10분 간격 자동 수집으로 <strong>실시간 경제 데이터 통합 시스템</strong> 구축 (ECOS, FRED, yFinance 3개 API 연동)</li>
                 <li>RAG Vector Store 기반 문서 검색으로 <strong>질의응답 정확도 향상</strong> 및 환각 현상 감소</li>
@@ -1145,13 +1153,13 @@
                 </a>
             </div>
 
-            <p style="font-size: 20px"><strong>프로젝트 개요</strong></p>
+            <p class="h4"><strong>프로젝트 개요</strong></p>
             <p>
                 Scikit-learn을 활용한 머신러닝(비지도) 클러스터링을 수행하고 서비스 모델 및 애플리케이션을 구현하였습니다.
                 데이터 전처리 및 분석 후 Matplotlib을 통해 시각화하여 클러스터 특성을 파악하고 비즈니스 인사이트를 도출하였습니다.
             </p>
 
-            <p style="font-size: 20px"><strong>Docs</strong></p>
+            <p  class="h4"><strong>Docs</strong></p>
 
             <details style="margin-bottom: 15px;">
                 <summary style="cursor: pointer; padding: 10px; background: var(--bg-tertiary); border-radius: 8px; list-style: none; display: flex; align-items: center; gap: 5px;">
@@ -1168,7 +1176,7 @@
                 </div>
             </details>
 
-            <p style="font-size: 20px; margin-top: 10px;"><strong>프로젝트 성과</strong></p>
+            <p class="h4" style="margin-bottom: 10px;"><strong>프로젝트 성과</strong></p>
 
             <ul>
                 <li>CSV 데이터에 대한 결측치 처리, 이상치 제거, StandardScaler를 통한 정규화 등 <strong>전처리 파이프라인 구축</strong></li>
@@ -1196,10 +1204,10 @@
                     </a>
                 </div>
 
-                <p style="font-size: 20px"><strong>프로젝트 개요</strong></p>
+                <p class="h4"><strong>프로젝트 개요</strong></p>
                 <p>매일매일 학습을 위한 영어/일본어 단어장입니다.</p>
 
-                <p style="font-size: 20px; margin-top: 20px;"><strong>프로젝트 성과</strong></p>
+                <p class="h4" style="margin-top: 20px;"><strong>프로젝트 성과</strong></p>
                 <ul>
                     <li>사용자 맞춤형 학습 진행 관리 시스템 구현</li>
                     <li>자동화된 날짜 관리를 통한 유지보수성 향상</li>
@@ -1221,10 +1229,10 @@
                     </a>
                 </div>
 
-                <p style="font-size: 20px"><strong>프로젝트 개요</strong></p>
+                <p class="h4"><strong>프로젝트 개요</strong></p>
                 <p>실시간으로 교통량을 시각화하는 대시보드입니다.</p>
 
-                <p style="font-size: 20px; margin-top: 20px;"><strong>프로젝트 성과</strong></p>
+                <p class="h4" style="margin-top: 20px;"><strong>프로젝트 성과</strong></p>
                 <ul>
                     <li>OpenAPI 활용 및 JSON 데이터 처리</li>
                     <li>실시간 데이터 처리 및 좌표 데이터 활용</li>
