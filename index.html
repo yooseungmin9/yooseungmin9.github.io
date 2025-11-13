@@ -814,10 +814,7 @@
 
         /* 모바일 레이아웃 (480px 이하) */
         @media (max-width: 480px) {
-            body,
-            .resume,
-            header h1,
-            .toggle-btn {
+            body {
                 transition: background-color 0.2s ease,
                             color 0.2s ease,
                             border-color 0.2s ease;
@@ -828,10 +825,13 @@
                 padding: 15px;
                 -webkit-backdrop-filter: blur(3px);
                 backdrop-filter: blur(3px);
+                transition: background-color 0.2s ease,
+                            color 0.2s ease,
+                            border-color 0.2s ease;
             }
 
             html {
-                font-size: 14px;
+                font-size: 1rem;
             }
 
             header {
@@ -842,6 +842,9 @@
             header h1 {
                 font-size: 1.6rem;
                 margin-bottom: 8px;
+                transition: background-color 0.2s ease,
+                            color 0.2s ease,
+                            border-color 0.2s ease;
             }
 
             .header-subtitle {
@@ -947,6 +950,9 @@
                 width: 50px;
                 height: 50px;
                 font-size: 1.714rem;
+                transition: background-color 0.2s ease,
+                            color 0.2s ease,
+                            border-color 0.2s ease;
             }
 
             .theme-toggle {
