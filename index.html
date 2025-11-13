@@ -71,11 +71,21 @@
             min-height: 100vh;
             background-color: var(--bg-primary);
             color: var(--text-primary);
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.5s ease, color 0.5s ease;
             position: relative;
+            will-change: background-color, color;
         }
 
-        html[data-theme="light"] body {
+        /* 라이트 모드 배경 (::after) */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
             background-image:
                     radial-gradient(ellipse 1000px 800px at 50% 50%,
                     rgba(200,220,255,0.05) 0%,
@@ -93,9 +103,24 @@
             background-attachment: fixed;
             background-repeat: no-repeat;
             background-size: cover;
+            opacity: 1;
+            transition: opacity 0.5s ease;
         }
 
-        html[data-theme="dark"] body {
+        html[data-theme="dark"] body::after {
+            opacity: 0;
+        }
+
+        /* 다크 모드 배경 (::before) */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
             background-image:
                     radial-gradient(ellipse 1000px 800px at 50% 50%,
                     rgba(80, 80, 80, 0.04) 0%,
@@ -113,18 +138,12 @@
             background-attachment: fixed;
             background-repeat: no-repeat;
             background-size: cover;
+            opacity: 0;
+            transition: opacity 0.5s ease;
         }
 
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: inherit;
-            pointer-events: none;
-            z-index: -1;
+        html[data-theme="dark"] body::before {
+            opacity: 1;
         }
 
         .resume {
@@ -139,7 +158,8 @@
             box-shadow: 0 8px 32px var(--shadow-color),
             var(--inset-shadow-light);
             position: relative;
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
+            will-change: background, border-color;
         }
 
         /* ========== 다크모드 토글 ========== */
@@ -161,7 +181,7 @@
             align-items: center;
             justify-content: center;
             font-size: 1.556rem;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
             box-shadow: 0 4px 15px var(--shadow-color);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -190,7 +210,8 @@
             font-weight: 700;
             word-break: break-word;
             letter-spacing: -0.5px;
-            transition: color 0.3s ease;
+            transition: color 0.5s ease;
+            will-change: color;
         }
 
         .header-subtitle {
@@ -199,7 +220,7 @@
             margin: 10px 0;
             word-break: break-word;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: color 0.5s ease;
         }
 
         .header-contact {
@@ -217,7 +238,7 @@
             text-decoration: none;
             padding: 8px 0;
             display: inline-block;
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
             font-weight: 500;
         }
 
@@ -251,7 +272,8 @@
             font-weight: 600;
             word-break: break-word;
             letter-spacing: -0.3px;
-            transition: all 0.3s ease;
+            transition: color 0.5s ease;
+            will-change: color;
         }
 
         h3 {
@@ -260,7 +282,8 @@
             margin-bottom: 12px;
             font-weight: 600;
             word-break: break-word;
-            transition: color 0.3s ease;
+            transition: color 0.5s ease;
+            will-change: color;
         }
 
         .h4 {
@@ -268,12 +291,14 @@
             margin: 10px 0;
             line-height: 1.6;
             color: var(--text-primary);
+            transition: color 0.5s ease;
         }
 
         .profile-text {
             font-size: 1rem;
             line-height: 1.8;
             color: var(--text-primary);
+            transition: color 0.5s ease;
         }
 
         /* ========== SKILLS GRID ========== */
@@ -295,7 +320,7 @@
             border: 1px solid var(--border-color);
             box-shadow: 0 4px 20px var(--shadow-color),
             var(--inset-shadow-light);
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
             min-height: 110px;
             display: flex;
             flex-direction: column;
@@ -323,7 +348,7 @@
             height: 45px;
             margin-bottom: 8px;
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0));
-            transition: filter 0.3s ease;
+            transition: filter 0.5s ease;
         }
 
         html[data-theme="dark"] .skill-item img {
@@ -333,10 +358,11 @@
         .project-role,
         .skill-item p {
             font-size: 0.85rem;
+            transition: color 0.5s ease;
         }
 
         .skills-header h2 {
-            font-size: 1.333rem; /* 24px -> rem */
+            font-size: 1.333rem;
             font-weight: bold;
         }
 
@@ -380,7 +406,7 @@
         }
 
         .legend-text {
-            font-size: 0.889rem; /* 16px -> rem */
+            font-size: 0.889rem;
         }
 
         .notification-dot {
@@ -418,7 +444,7 @@
             border: 1px solid var(--border-color);
             box-shadow: 0 4px 20px var(--shadow-color),
             var(--inset-shadow-light);
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
         }
 
         .project:hover {
@@ -445,7 +471,7 @@
             color: var(--text-secondary);
             font-size: 0.9rem;
             align-self: flex-start;
-            transition: color 0.3s ease;
+            transition: color 0.5s ease;
         }
 
         .project-role {
@@ -459,12 +485,13 @@
             word-break: break-word;
             border: 1px solid rgba(100, 200, 255, 0.3);
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
         }
 
         .project strong {
             word-break: break-word;
             color: var(--text-primary);
+            transition: color 0.5s ease;
         }
 
         .project ul {
@@ -474,17 +501,15 @@
 
         .p2 {
             font-size: 0.9rem;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: color 0.5s ease;
         }
 
         .project li {
             font-size: 0.9rem;
-        }
-
-        .project li {
             margin-bottom: 8px;
             line-height: 1.6;
             color: var(--text-primary);
+            transition: color 0.5s ease;
         }
 
         .project-grid {
@@ -511,7 +536,7 @@
             transform: translateY(-1px);
             box-shadow: 0 12px 40px var(--shadow-color),
             var(--inset-shadow-dark);
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
         }
 
         .flow-step:hover {
@@ -528,12 +553,14 @@
             font-weight: 600;
             color: var(--accent-color);
             margin-bottom: 8px;
+            transition: color 0.5s ease;
         }
 
         .flow-step-content {
             font-size: 0.9rem;
             color: var(--text-primary);
             line-height: 1.5;
+            transition: color 0.5s ease;
         }
 
         .flow-arrow {
@@ -542,6 +569,7 @@
             color: var(--divider-color);
             margin: 8px 0;
             line-height: 1;
+            transition: color 0.5s ease;
         }
 
         /* ========== LINKS ========== */
@@ -557,7 +585,7 @@
             padding: 8px 0;
             display: inline-flex;
             align-items: center;
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
             color: var(--text-primary);
             text-decoration: none;
             font-weight: 500;
@@ -575,7 +603,7 @@
         .link-group a img {
             vertical-align: middle;
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0));
-            transition: filter 0.3s ease;
+            transition: filter 0.5s ease;
         }
 
         html[data-theme="dark"] .link-group a img {
@@ -614,6 +642,7 @@
             border-bottom: 1px solid var(--border-color);
             font-size: 1rem;
             color: var(--text-primary);
+            transition: color 0.5s ease, border-color 0.5s ease;
         }
 
         .education-list li:last-child,
@@ -624,10 +653,11 @@
         .education-list li strong,
         .experience-list li strong {
             color: var(--text-primary);
+            transition: color 0.5s ease;
         }
 
         details summary span:first-child {
-            transition: transform 0.3s ease;
+            transition: transform 0.5s ease;
         }
 
         details[open] summary span:first-child {
@@ -820,7 +850,6 @@
 
             .p2 {
                 font-size: 0.9rem;
-                transition: background-color 0.3s ease, color 0.3s ease;
             }
 
             .project li {
@@ -1054,9 +1083,9 @@
             </div>
 
             <div class="link-group">
-            <a href="https://github.com/yooseungmin9/yoo-chatbot-v1">
-                <span class="project-role">기획 총괄 · AI 챗봇 개발</span>
-            </a>
+                <a href="https://github.com/yooseungmin9/yoo-chatbot-v1">
+                    <span class="project-role">기획 총괄 · AI 챗봇 개발</span>
+                </a>
                 <a href="https://github.com/yooseungmin9/dgict-teamb" target="_blank">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="width: 36px; height: 36px; margin-bottom: 14px;">
                 </a>
@@ -1150,9 +1179,9 @@
             </div>
 
             <div class="link-group" style="margin-bottom: 0px;">
-            <a href="https://customer1.streamlit.app/" target="_blank">
-                <span class="project-role">비지도 머신러닝 어플</span>
-            </a>
+                <a href="https://customer1.streamlit.app/" target="_blank">
+                    <span class="project-role">비지도 머신러닝 어플</span>
+                </a>
                 <a href="https://github.com/yooseungmin9/customer-grade" target="_blank">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="width: 36px; height: 36px; margin-bottom: 14px;">
                 </a>
@@ -1167,8 +1196,8 @@
             <p  class="h4"><strong>Docs</strong></p>
 
             <details style="margin-bottom: 15px;">
-                <summary style="cursor: pointer; padding: 10px; background: var(--bg-tertiary); border-radius: 8px; list-style: none; display: flex; align-items: center; gap: 5px; transition: background-color 0.3s ease, color 0.3s ease;">
-                    <span class="summary" style="display: inline-block; transition: transform 0.3s ease;">▶</span>
+                <summary style="cursor: pointer; padding: 10px; background: var(--bg-tertiary); border-radius: 8px; list-style: none; display: flex; align-items: center; gap: 5px;">
+                    <span class="summary" style="display: inline-block;">▶</span>
                     <span>Docs 보기</span>
                 </summary>
                 <div style="margin-top: 10px;">
@@ -1201,9 +1230,9 @@
                 </div>
 
                 <div class="link-group">
-                <a href="https://smartvocab.streamlit.app/" target="_blank">
-                    <span class="project-role">영어/일본어 단어장</span>
-                </a>
+                    <a href="https://smartvocab.streamlit.app/" target="_blank">
+                        <span class="project-role">영어/일본어 단어장</span>
+                    </a>
                     <a href="https://github.com/yooseungmin9/smart-vocab" target="_blank">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="width: 36px; height: 36px; margin-bottom: 14px;">
                     </a>
@@ -1226,9 +1255,9 @@
                 </div>
 
                 <div class="link-group">
-                <a href="https://mintapp.streamlit.app/" target="_blank">
-                    <span class="project-role">실시간 대전 교통정보</span>
-                </a>
+                    <a href="https://mintapp.streamlit.app/" target="_blank">
+                        <span class="project-role">실시간 대전 교통정보</span>
+                    </a>
                     <a href="https://github.com/yooseungmin9/mint-app" target="_blank">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="width: 36px; height: 36px; margin-bottom: 14px;">
                     </a>
@@ -1295,7 +1324,7 @@
     // 아이콘 업데이트 함수
     function updateThemeIcon(theme) {
         themeToggle.textContent = theme === 'light' ? '🌙' : '☀️';
-        themeToggle.style.transition = 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        themeToggle.style.transition = 'all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
     }
 
     // 시스템 다크모드 설정 감지
