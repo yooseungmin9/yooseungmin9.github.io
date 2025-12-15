@@ -341,7 +341,6 @@
             box-shadow: 0 4px 20px var(--shadow-color),
             var(--inset-shadow-light);
             transition: background 0.2s ease,
-            transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
             box-shadow 0.2s ease,
             border-color 0.2s ease;
             min-height: 110px;
@@ -351,10 +350,17 @@
             justify-content: center;
         }
 
+        .skill-item:not(.theme-transitioning):hover {
+            transform: translateY(-1px);
+            transition: background 0.2s ease,
+            transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+            box-shadow 0.2s ease,
+            border-color 0.2s ease;
+        }
+
         .skill-item:hover {
             background: var(--skill-hover-bg);
             border-color: var(--skill-hover-border);
-            transform: translateY(-1px);
             box-shadow: 0 12px 40px var(--shadow-accent),
             inset 0 1px 1px rgb(255, 255, 255, 0.3),
             inset 0 -1px 2px rgba(255, 255, 255, 0);
@@ -1077,7 +1083,7 @@
             </div>
             <div class="skill-item">
                 <span class="notification-dot intermediate"></span>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle" style="width: 55px; height: 55px;">
                 <p>Oracle</p>
             </div>
             <div class="skill-item">
@@ -1101,9 +1107,10 @@
                 <p>Google Colab</p>
             </div>
             <div class="skill-item">
-                <span class="notification-dot basic"></span>
-                <img src="img/aws2.webp" alt="Amazon AWS">
-                <p>Amazon AWS</p>
+                <span class="notification-dot advanced"></span>
+                <img src="img/openai.png" alt="OpenAI" class="logo-light">
+                <img src="img/openai-white.png" alt="OpenAI" class="logo-dark">
+                <p>OpenAI API</p>
             </div>
             <div class="skill-item">
                 <span class="notification-dot intermediate"></span>
@@ -1193,7 +1200,7 @@
                     <span class="project-role">기획 총괄 · AI 챗봇 개발</span>
                 </a>
                 <a href="https://www.notion.so/yoo-chatbot-2bfca2ee78bc8089a2e6e8993860d803?pvs=12" target="_blank">
-                    <img src="img/notion.png" alt="Notion" style="width: 32px; height: 32px; margin-bottom: 14px;">
+                    <img src="img/notion.png" alt="Notion" style="width: 36px; height: 36px; margin-bottom: 14px;">
                 </a>
                 <a href="https://github.com/yooseungmin9/dgict-teamb" target="_blank">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="width: 36px; height: 36px; margin-bottom: 14px;">
@@ -1426,34 +1433,19 @@
         const currentTheme = html.getAttribute('data-theme');
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
 
-        // will-change 일시 적용
-        document.body.style.willChange = 'background-color';
-        document.querySelectorAll('.resume, .toggle-btn, header h1').forEach(el => {
-            el.style.willChange = 'background, color, border-color';
-        });
-
-        // transition 비활성화
-        document.body.style.transition = 'none';
-        document.querySelectorAll('*').forEach(el => {
-            el.style.transition = 'none';
-        });
+        // skill-item에 전환 중 클래스 추가 (transform 방지)
+        const skillItems = document.querySelectorAll('.skill-item');
+        skillItems.forEach(el => el.classList.add('theme-transitioning'));
 
         // 테마 변경
         html.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         updateThemeIcon(newTheme);
 
-        // transition 복구 및 will-change 제거
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                document.body.style.transition = '';
-                document.querySelectorAll('*').forEach(el => {
-                    el.style.transition = '';
-                    el.style.willChange = 'auto'; // will-change 제거
-                });
-                document.body.style.willChange = 'auto';
-            });
-        });
+        // 전환 완료 후 클래스 제거
+        setTimeout(() => {
+            skillItems.forEach(el => el.classList.remove('theme-transitioning'));
+        }, 300);
     });
 
     // 아이콘 업데이트 함수
