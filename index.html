@@ -424,6 +424,26 @@
             display: flex;
             align-items: center;
             gap: 6px;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 12px;
+            transition: background-color 0.2s ease, opacity 0.2s ease;
+        }
+
+        .legend-item:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        html[data-theme="dark"] .legend-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .legend-item.active {
+            background-color: rgba(13, 110, 253, 0.15);
+        }
+
+        .legend-item.dimmed {
+            opacity: 0.4;
         }
 
         .legend-dot {
@@ -449,6 +469,12 @@
         .legend-text {
             font-size: 0.889rem;
             font-weight: 400;
+        }
+
+        .skill-item.filtered-out {
+            opacity: 0.15;
+            transform: scale(0.95);
+            pointer-events: none;
         }
 
         .notification-dot {
@@ -1034,15 +1060,15 @@
             <h2>기술 스택</h2>
             <div class="skill-legend-container">
                 <div class="skill-legend">
-                    <div class="legend-item">
+                    <div class="legend-item" data-level="advanced">
                         <span class="legend-dot advanced"></span>
                         <span class="legend-text">Advanced</span>
                     </div>
-                    <div class="legend-item">
+                    <div class="legend-item" data-level="intermediate">
                         <span class="legend-dot intermediate"></span>
                         <span class="legend-text">Intermediate</span>
                     </div>
-                    <div class="legend-item">
+                    <div class="legend-item" data-level="basic">
                         <span class="legend-dot basic"></span>
                         <span class="legend-text">Basic</span>
                     </div>
@@ -1050,103 +1076,103 @@
             </div>
         </div>
         <div class="skills-grid">
-            <div class="skill-item">
+            <div class="skill-item" data-level="advanced">
                 <span class="notification-dot advanced"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
                 <p>Python</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" data-level="advanced">
                 <span class="notification-dot advanced"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI">
                 <p>FastAPI</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" data-level="intermediate">
                 <span class="notification-dot intermediate"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
                 <p>Java</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" data-level="intermediate">
                 <span class="notification-dot intermediate"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">
                 <p>Spring Boot</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" data-level="intermediate">
                 <span class="notification-dot intermediate"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/thymeleaf/thymeleaf-original.svg" alt="Thymeleaf">
                 <p>Thymeleaf</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" data-level="intermediate">
                 <span class="notification-dot intermediate"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle" style="width: 55px; height: 55px;">
                 <p>Oracle</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" data-level="advanced">
                 <span class="notification-dot advanced"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
                 <p>MongoDB</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" data-level="intermediate">
                 <span class="notification-dot intermediate"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
                 <p>MySQL</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" data-level="intermediate">
                 <span class="notification-dot intermediate"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud">
                 <p>Google Cloud</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" data-level="intermediate">
                 <span class="notification-dot intermediate"></span>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Google Colab">
                 <p>Google Colab</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" data-level="basic">
                 <span class="notification-dot basic"></span>
                 <img src="img/aws2.webp" alt="Amazon AWS" class="logo-light">
                 <img src="img/aws-white.png" alt="Amazon AWS" class="logo-dark" style="position: relative; top: -2px;">
                 <p>Amazon AWS</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" data-level="intermediate">
                 <span class="notification-dot intermediate"></span>
                 <img src="https://huggingface.co/front/assets/huggingface_logo.svg" alt="Transformers">
                 <p>Transformers</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" data-level="basic">
                 <span class="notification-dot basic"></span>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn">
                 <p>Scikit-learn</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" data-level="basic">
                 <span class="notification-dot basic"></span>
                 <img src="img/TensorFlow.svg" alt="TensorFlow">
                 <p>TensorFlow</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" data-level="basic">
                 <span class="notification-dot basic"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch">
                 <p>PyTorch</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" data-level="advanced">
                 <span class="notification-dot advanced"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter">
                 <p>Jupyter</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" data-level="advanced">
                 <span class="notification-dot advanced"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
                 <p>Pandas</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" data-level="advanced">
                 <span class="notification-dot advanced"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="Numpy">
                 <p>Numpy</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" data-level="advanced">
                 <span class="notification-dot advanced"></span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib">
                 <p>Matplotlib</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" data-level="advanced">
                 <span class="notification-dot advanced"></span>
                 <img src="img/seaborn.svg" alt="Seaborn">
                 <p>Seaborn</p>
@@ -1463,6 +1489,50 @@
             html.setAttribute('data-theme', newTheme);
             updateThemeIcon(newTheme);
         }
+    });
+
+    // 스킬 레벨 필터링 기능
+    const legendItems = document.querySelectorAll('.legend-item[data-level]');
+    const skillItemsForFilter = document.querySelectorAll('#skills .skill-item[data-level]');
+    let activeFilter = null;
+
+    legendItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const level = item.getAttribute('data-level');
+
+            // 같은 필터를 다시 클릭하면 필터 해제
+            if (activeFilter === level) {
+                activeFilter = null;
+                // 모든 legend-item 원래대로
+                legendItems.forEach(li => {
+                    li.classList.remove('active', 'dimmed');
+                });
+                // 모든 skill-item 표시
+                skillItemsForFilter.forEach(si => {
+                    si.classList.remove('filtered-out');
+                });
+            } else {
+                activeFilter = level;
+                // legend-item 스타일 업데이트
+                legendItems.forEach(li => {
+                    if (li.getAttribute('data-level') === level) {
+                        li.classList.add('active');
+                        li.classList.remove('dimmed');
+                    } else {
+                        li.classList.remove('active');
+                        li.classList.add('dimmed');
+                    }
+                });
+                // skill-item 필터링
+                skillItemsForFilter.forEach(si => {
+                    if (si.getAttribute('data-level') === level) {
+                        si.classList.remove('filtered-out');
+                    } else {
+                        si.classList.add('filtered-out');
+                    }
+                });
+            }
+        });
     });
 </script>
 </body>
